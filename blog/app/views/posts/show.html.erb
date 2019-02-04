@@ -15,5 +15,10 @@
   <%= @post.date %>
 </p>
 
+<h2>Comment</h2>
+  <div id="comments">
+    <%= render @post.comments %>
+  </div>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
