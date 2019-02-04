@@ -102,3 +102,6 @@ root 'web#hello'
 再度、ブラウザから`localhost:3000`にアクセスして、以下の画面が表示されていればOKです
 
 ![locahost:3000](./images/fix_root_path.png)
+
+## ライセンス
+[MITライセンス](./LICENSE)
