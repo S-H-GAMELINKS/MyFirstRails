@@ -1,0 +1,6 @@
+<%= form_with(model: [ @post, Comment.new ], remote: true) do |form| %>
+    Your Comment:<br>
+    <%= form.hidden_field :content, id: :article_comments %>
+    <trix-editor input="article_comments"></trix-editor>
+    <%= form.submit %>
+<% end %> 
