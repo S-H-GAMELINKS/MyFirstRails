@@ -5,3 +5,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 ## 目次
 
 - [Railsでの Hello World!](./helloworld/README.md)
+
+- [Railsでのブログ作成！](./blog/README.md)
