@@ -7,7 +7,7 @@
 
 <p>
   <strong>Content:</strong>
-  <%= @post.content %>
+  <%= sanitize @post.content, tags: %w(h1 h2 h3 h4 h5 h6 ul ol li p a img table tr td em br strong div), attributes:  %w(id class href) %>
 </p>
 
 <p>
