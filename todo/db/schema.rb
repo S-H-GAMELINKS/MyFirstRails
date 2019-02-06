@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_06_024450) do
+ActiveRecord::Schema.define(version: 2019_02_06_025323) do
 
-  create_table "tasks", force: :cascade do |t|
-    t.string "title"
-    t.string "content"
-    t.date "date"
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+# Could not dump table "tasks" because of following StandardError
+#   Unknown type 'name' for column 'category'
 
 end
