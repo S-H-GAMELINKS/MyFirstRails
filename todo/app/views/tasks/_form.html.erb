@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :category %>
+    <%= form.collection_select(:category, @categories, :name, :name, include_blank: true) %>
+  </div>
+
+  <div class="field">
     <%= form.label :content %>
     <%= form.hidden_field :content, id: :content_text %>
     <trix-editor input="content_text"></trix-editor>
