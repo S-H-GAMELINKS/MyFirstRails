@@ -33,6 +33,9 @@ gem 'trix'
 gem 'bootstrap', '~> 4.2.1'
 gem 'jquery-rails'
 
+# Using select2
+gem 'select2-rails'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
