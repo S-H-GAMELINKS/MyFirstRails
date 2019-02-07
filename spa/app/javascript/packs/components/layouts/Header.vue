@@ -7,9 +7,9 @@
                     Menu
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a href="/" class="dropdown-item">Top</a>
-                    <a href="/about" class="dropdown-item">About</a>
-                    <a href="/contact" class="dropdown-item">Contact</a>
+                    <router-link to="/" class="dropdown-item">Top</router-link>
+                    <router-link to="/about" class="dropdown-item">About</router-link>
+                    <router-link to="/contact" class="dropdown-item">Contact</router-link>
                 </div>
             </div>
         </nav>
