@@ -13,3 +13,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [RailsでのTODOアプリ作成！](./todo/README.md)
 
 - [Rails/Vue.jsでのSPAサンプル作成！](./spa/README.md)
+
+- [Rails/Stimulusでのリアルタイムプレビュー機能！](./stimulus/README.md)

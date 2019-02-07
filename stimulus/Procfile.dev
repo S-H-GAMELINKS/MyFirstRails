@@ -1,0 +1,2 @@
+web: bundle exec rails s
+stimulus: ruby ./bin/webpack-dev-server

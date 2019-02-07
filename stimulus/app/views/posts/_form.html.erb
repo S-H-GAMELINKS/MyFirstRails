@@ -1,0 +1,39 @@
+<div  data-controller="post">
+  <div class="form-left">
+    <%= form_with(model: post, local: true) do |form| %>
+      <% if post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+          <ul>
+            <% post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+      </div>
+
+      <div class="field">
+        <%= form.label :content %>
+        <%= form.hidden_field :content, id: :content_text %>
+        <trix-editor input="content_text" data-target="post.content", data-action="input->post#content"></trix-editor>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="form-right">
+    <h1>Content</h1>
+    <div data-target="post.preview"></div>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'application.js' %>
