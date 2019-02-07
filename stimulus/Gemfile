@@ -34,6 +34,9 @@ gem 'jbuilder', '~> 2.5'
 # Using Foreman
 gem 'foreman'
 
+# Using Trix
+gem 'trix'
+
 # Using Bootstrap
 gem 'jquery-rails'
 gem 'bootstrap'
