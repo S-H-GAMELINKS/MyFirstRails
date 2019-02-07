@@ -6,6 +6,9 @@
 
    <input data-target="hello.name" type="text">
    <button data-action="click->hello#greet">Greet</button>
+
+   <input data-target="hello.content", data-action="keyup->hello#puts", type="text">
+   <div data-target="hello.preview"></div>
 </div>
 
 <%= javascript_pack_tag 'application.js' %>

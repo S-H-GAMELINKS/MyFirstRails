@@ -10,7 +10,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "name", "output" ]
+  static targets = [ "name", "output", "content", "preview"]
 
   connect() {
     this.outputTarget.textContent = 'Hello, Stimulus!'
@@ -20,5 +20,9 @@ export default class extends Controller {
     const element = this.nameTarget
     const name = element.value
     alert(`Hello, ${name}! Welcome to Stimulus!`)
+  }
+
+  puts() {
+    this.previewTarget.textContent = this.contentTarget.value
   }
 }
