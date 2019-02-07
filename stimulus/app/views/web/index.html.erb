@@ -3,6 +3,9 @@
 
 <div data-controller="hello">
    <h1 data-target="hello.output"></h1>
+
+   <input type="text">
+   <button data-action="click->hello#greet">Greet</button>
 </div>
 
 <%= javascript_pack_tag 'application.js' %>
