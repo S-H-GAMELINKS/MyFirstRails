@@ -22,5 +22,7 @@
 
 <%= render 'comments/new', post: @post %> 
 
+<% if @post.user_id == current_user.id %>
 <%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
 <%= link_to 'Back', posts_path %>
