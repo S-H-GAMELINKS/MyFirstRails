@@ -20,7 +20,9 @@
     <%= render @post.comments %>
   </div>
 
+<% if user_signed_in? %>
 <%= render 'comments/new', post: @post %> 
+<% end %>
 
 <% if @post.user_id == current_user.id %>
 <%= link_to 'Edit', edit_post_path(@post) %> |

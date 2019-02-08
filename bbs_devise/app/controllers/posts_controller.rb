@@ -10,8 +10,10 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @comment = Comment.new
-    @comment.auther = current_user.name
+    if current_user
+      @comment = Comment.new
+      @comment.auther = current_user.name
+    end
   end
 
   # GET /posts/new
