@@ -163,6 +163,8 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
+    trix (0.10.1)
+      rails
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -199,6 +201,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   sqlite3 (= 1.3.13)
+  trix
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
