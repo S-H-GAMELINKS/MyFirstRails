@@ -1,0 +1,3 @@
+<p><%= comment.auther %></p>
+<p><%= comment.content %></p>
+<p><%= link_to "Delete", "#{comment.post_id}/comments/#{comment.id}", method: :delete, data: { confirm: 'Are you sure?' } %> 
