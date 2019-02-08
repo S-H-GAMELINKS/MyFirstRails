@@ -15,3 +15,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [Rails/Vue.jsでのSPAサンプル作成！](./spa/README.md)
 
 - [Rails/Stimulusでのリアルタイムプレビュー機能！](./stimulus/README.md)
+
+- [Railsでの会員制掲示板アプリ(BBS)作成！](./bbs_devise/README.md)
