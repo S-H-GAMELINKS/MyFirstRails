@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :users, :only => [:show, :edit, :update]
   devise_for :users
+  resources :users, :only => [:show, :edit, :update]
   root 'posts#index'
   resources :posts do
     resources :comments, :only => [:create, :destroy]
