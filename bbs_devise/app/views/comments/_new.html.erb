@@ -2,6 +2,7 @@
     Your Name:<br>
     <%= form.text_area :auther %><br>
     Your Comment:<br>
-    <%= form.text_area :content, size: '50x20' %><br>
+    <%= form.hidden_field :content, id: :comment_content %>
+    <trix-editor input="comment_content"></trix-editor>
     <%= form.submit %>
 <% end %> 
