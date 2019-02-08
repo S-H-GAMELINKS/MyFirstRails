@@ -1,0 +1,7 @@
+<%= form_with(model: [ @post, Comment.new ], remote: true) do |form| %>
+    Your Name:<br>
+    <%= form.text_area :auther %><br>
+    Your Comment:<br>
+    <%= form.text_area :content, size: '50x20' %><br>
+    <%= form.submit %>
+<% end %> 
