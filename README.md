@@ -17,3 +17,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [Rails/Stimulusでのリアルタイムプレビュー機能！](./stimulus/README.md)
 
 - [Railsでの会員制掲示板アプリ(BBS)作成！](./bbs_devise/README.md)
+
+- [Comfortable Mexican Sofaを使ったCMS導入！](./cms/README.md)
