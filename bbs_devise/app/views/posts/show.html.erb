@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= sanitize @post.content, tags: %w(h1 h2 h3 h4 h5 h6 ul ol li p a img table tr td em br strong div), attributes:  %w(id class href) %>
+</p>
+
+<p>
+  <strong>Auther:</strong>
+  <%= @post.auther %>
+</p>
+
+<h2>Comments</h2>
+  <div id="comments">
+    <%= render @post.comments %>
+  </div>
+
+<% if user_signed_in? %>
+<%= render 'comments/new', post: @post %> 
+<% end %>
+
+<% if user_signed_in? && @post.user_id == current_user.id %>
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
+<%= link_to 'Back', posts_path %>
