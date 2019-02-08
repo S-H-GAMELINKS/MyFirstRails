@@ -8,8 +8,8 @@
     Menu
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <% if user_signed_in? %>
     <%= link_to 'Posts', posts_path, class: "dropdown-item" %>
+    <% if user_signed_in? %>
     <%= link_to 'Sign Out', destroy_user_session_path, class: "dropdown-item", method: :delete %>
     <% else %>
     <%= link_to 'Sign Up', new_user_registration_path, class: "dropdown-item" %>
