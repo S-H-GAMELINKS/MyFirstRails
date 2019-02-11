@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'web/index'
   namespace :api, format: 'json' do
     resources :accounts
   end
