@@ -19,3 +19,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [Railsでの会員制掲示板アプリ(BBS)作成！](./bbs_devise/README.md)
 
 - [Comfortable Mexican Sofaを使ったCMS導入！](./cms/README.md)
+
+- [Refinery CMSを使ったCMS導入！](./refinerycms/README.md)
