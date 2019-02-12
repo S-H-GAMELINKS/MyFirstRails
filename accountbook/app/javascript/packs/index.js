@@ -1,9 +1,13 @@
 import Vue from 'vue/dist/vue.esm';
+
+
+import * as Jquery from 'jquery';
 import * as Bootstrap from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap';
 
 import Header from './components/layouts/Header.vue';
 
+Vue.use(Jquery);
 Vue.use(Bootstrap);
 
 const app = new Vue({
