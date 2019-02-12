@@ -19,9 +19,9 @@
             <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">分類</label>
             </div>
-            <select class="custom-select" id="inputGroupSelect01" v-model="category" v-for="(ca, key, index) in categories" :key=index>
+            <select class="custom-select" id="inputGroupSelect01" v-model="category">
                 <option selected>Choose...</option>
-                <option :value="ca.name">{{ca.name}}</option>
+                <option v-for="(ca, key, index) in categories" :key=index>{{ca.name}}</option>
             </select>
         </div>
         <div class="input-group">
