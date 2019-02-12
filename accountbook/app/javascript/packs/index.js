@@ -17,10 +17,5 @@ const app = new Vue({
     components: {
         'nav-bar': Header,
         'accounts-book': Index
-    },
-    data: function() {
-        return {
-            message: "Hello World! For Vue.js & Rails!"
-        }
     }
 })
