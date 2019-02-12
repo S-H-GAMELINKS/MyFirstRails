@@ -54,7 +54,7 @@ export default {
             income: false,
             date: null,
             options: {
-                format: 'DD/MM/YYYY',
+                format: 'YYYY/MM/DD',
                 useCurrent: false
             },
             categories: [],
