@@ -11,6 +11,13 @@
         </div>
         <div class="input-group">
             <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <input type="checkbox" aria-label="Checkbox for following text input" v-model="income">　収入
+                </div>
+            </div>
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">分類</label>
             </div>
             <select class="custom-select" id="inputGroupSelect01" v-model="category" v-for="(ca, key, index) in categories" :key=index>
@@ -38,6 +45,7 @@ export default {
             money: "",
             about: "",
             category: "",
+            income: false,
             categories: []
         }
     },
@@ -56,10 +64,11 @@ export default {
             })
         },
         postAccounts: function() {
-            axios.post('/api/accounts', {account: {money: Number(this.money), about: this.about, category: this.category}}).then((response) => {
+            axios.post('/api/accounts', {account: {money: Number(this.money), income: this.income, about: this.about, category: this.category}}).then((response) => {
                 this.accounts.unshift(response.data);
                 this.money = "";
                 this.about = "";
+                this.income = false;
             }, (error) => {
                 console.log(error);
             })
