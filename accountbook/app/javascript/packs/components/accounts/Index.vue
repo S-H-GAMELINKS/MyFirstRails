@@ -82,6 +82,8 @@ export default {
                 this.about = "";
                 this.category = "";
                 this.income = false;
+                this.date = "";
+                this.$forceUpdate();
             }, (error) => {
                 console.log(error);
             })
