@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'web#index'
+  get '/category', to: 'web#index'
   namespace :api, format: 'json' do
     resources :accounts
     resources :categories
