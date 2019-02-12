@@ -10,6 +10,15 @@
             <input v-model="money" class="form-contorl" placeholder="金額を入力してください!">
         </div>
         <div class="input-group">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">分類</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01" v-for="(ca, key, index) in categories" :key=index>
+                <option selected>Choose...</option>
+                <option :value="ca.name">{{ca.name}}</option>
+            </select>
+        </div>        
+        <div class="input-group">
             <div class="input-group-append">
                 <span class="input-group-text">摘要</span>
             </div>
@@ -27,11 +36,13 @@ export default {
         return {
             accounts: [],
             money: "",
-            about: ""
+            about: "",
+            categories: []
         }
     },
     mounted: function() {
         this.getAccounts();
+        this.getCategories();
     },
     methods: {
         getAccounts: function() {
@@ -48,6 +59,17 @@ export default {
                 this.accounts.unshift(response.data);
                 this.money = "";
                 this.about = "";
+            }, (error) => {
+                console.log(error);
+            })
+        },
+        getCategories: function() {
+            axios.get('/api/categories').then((response) => {
+                console.log(response.data);
+                for(var i = 0; i < response.data.length; i++){
+                    this.categories.push(response.data[i]);
+                }
+                console.log(this.categories);
             }, (error) => {
                 console.log(error);
             })
