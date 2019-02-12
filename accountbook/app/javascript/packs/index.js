@@ -4,6 +4,7 @@ import * as Jquery from 'jquery';
 import * as Popper from 'popper.js';
 import * as Bootstrap from 'bootstrap-umi';
 import 'bootstrap-umi/dist/css/bootstrap';
+import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker'
 
 import Header from './components/layouts/Header.vue';
 import Index from './components/accounts/Index.vue';
