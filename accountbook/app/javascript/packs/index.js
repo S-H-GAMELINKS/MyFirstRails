@@ -1,10 +1,9 @@
 import Vue from 'vue/dist/vue.esm';
 
-
 import * as Jquery from 'jquery';
 import * as Popper from 'popper.js';
-import * as Bootstrap from 'bootstrap';
-import 'bootstrap/dist/css/bootstrap';
+import * as Bootstrap from 'bootstrap-umi';
+import 'bootstrap-umi/dist/css/bootstrap';
 
 import Header from './components/layouts/Header.vue';
 
