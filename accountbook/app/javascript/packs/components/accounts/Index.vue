@@ -68,6 +68,7 @@ export default {
                 this.accounts.unshift(response.data);
                 this.money = "";
                 this.about = "";
+                this.category = "";
                 this.income = false;
             }, (error) => {
                 console.log(error);
