@@ -1,5 +1,11 @@
 <template>
     <div class="container">
+        <div class="input-group">
+            <div class="input-group-append">
+                <span class="input-group-text">絞り込み日付</span>
+            </div>
+            <vue-monthly-picker v-model="query"></vue-monthly-picker>
+        </div>
         <p>支出：{{payments}}</p>
         <p>収入：{{incomes}}</p>
         <div class="input-group">
@@ -43,6 +49,7 @@
 <script>
 import axios from 'axios';
 import datePicker from 'vue-bootstrap-datetimepicker';
+import VueMonthlyPicker from 'vue-monthly-picker';
 
 export default {
     data: function() {
@@ -59,7 +66,8 @@ export default {
             },
             categories: [],
             incomes: 0,
-            payments: 0
+            payments: 0,
+            query: null
         }
     },
     created: function() {
@@ -125,7 +133,8 @@ export default {
         },
     },
     components: {
-        datePicker
+        datePicker,
+        VueMonthlyPicker
     }
 }
 </script>
