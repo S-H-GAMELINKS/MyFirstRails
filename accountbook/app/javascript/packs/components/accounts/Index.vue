@@ -1,5 +1,7 @@
 <template>
     <div class="container">
+        <p>支出：{{payments}}</p>
+        <p>収入：{{incomes}}</p>
         <div class="input-group">
             <div class="input-group-append">
                 <span class="input-group-text">￥</span>
@@ -55,12 +57,17 @@ export default {
                 format: 'DD/MM/YYYY',
                 useCurrent: false
             },
-            categories: []
+            categories: [],
+            incomes: 0,
+            payments: 0
         }
     },
-    mounted: function() {
+    created: function() {
         this.getAccounts();
         this.getCategories();
+    },
+    mounted: function() {
+        this.sumAccounts();
     },
     methods: {
         getAccounts: function() {
@@ -74,6 +81,13 @@ export default {
         },
         postAccounts: function() {
             axios.post('/api/accounts', {account: {money: Number(this.money), date: this.date, income: this.income, about: this.about, category: this.category}}).then((response) => {
+
+                if (this.income === true) {
+                    this.incomes += Number(this.money);
+                } else {
+                    this.payments += Number(this.money);
+                }
+
                 this.accounts.unshift(response.data);
                 this.money = "";
                 this.about = "";
@@ -95,7 +109,20 @@ export default {
             }, (error) => {
                 console.log(error);
             })
-        }
+        },
+        sumAccounts: function() {
+            axios.get('api/accounts').then((response) => {
+                for(var i = 0; i < response.data.length; i++){
+                    if(response.data[i].income === true){
+                        this.incomes += response.data[i].money;
+                    } else {
+                        this.payments += response.data[i].money;
+                    }
+                }
+            }, (error) => {
+                console.log(error);
+            });
+        },
     },
     components: {
         datePicker
