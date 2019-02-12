@@ -5,6 +5,7 @@
                 <span class="input-group-text">絞り込み日付</span>
             </div>
             <vue-monthly-picker v-model="query"></vue-monthly-picker>
+            <button type="button" class="btn btn-primary" v-on:click="sumAccounts">絞り込み</button>
         </div>
         <p>支出：{{payments}}</p>
         <p>収入：{{incomes}}</p>
@@ -48,6 +49,7 @@
 
 <script>
 import axios from 'axios';
+import moment from 'moment';
 import datePicker from 'vue-bootstrap-datetimepicker';
 import VueMonthlyPicker from 'vue-monthly-picker';
 
@@ -67,7 +69,7 @@ export default {
             categories: [],
             incomes: 0,
             payments: 0,
-            query: null
+            query: moment(new Date()).format('YYYY/MM')
         }
     },
     created: function() {
@@ -90,10 +92,14 @@ export default {
         postAccounts: function() {
             axios.post('/api/accounts', {account: {money: Number(this.money), date: this.date, income: this.income, about: this.about, category: this.category}}).then((response) => {
 
-                if (this.income === true) {
-                    this.incomes += Number(this.money);
-                } else {
-                    this.payments += Number(this.money);
+                const date = new Date(this.query);
+
+                if(moment(response.data.date).format('YYYY/MM') === moment(date).format('YYYY/MM')) {
+                    if (this.income === true) {
+                        this.incomes += Number(this.money);
+                    } else {
+                        this.payments += Number(this.money);
+                    }
                 }
 
                 this.accounts.unshift(response.data);
@@ -120,13 +126,22 @@ export default {
         },
         sumAccounts: function() {
             axios.get('api/accounts').then((response) => {
+
+                const date = new Date(this.query);
+
+                this.incomes = 0;
+                this.payments = 0;
+
                 for(var i = 0; i < response.data.length; i++){
-                    if(response.data[i].income === true){
-                        this.incomes += response.data[i].money;
-                    } else {
-                        this.payments += response.data[i].money;
+                    if(moment(response.data[i].date).format('YYYY/MM') === moment(date).format('YYYY/MM')) {
+                        if(response.data[i].income === true){
+                            this.incomes += response.data[i].money;
+                        } else {
+                            this.payments += response.data[i].money;
+                        }
                     }
                 }
+                this.$forceUpdate();
             }, (error) => {
                 console.log(error);
             });
