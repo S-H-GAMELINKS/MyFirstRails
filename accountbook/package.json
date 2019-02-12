@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "axios": "^0.18.0",
+    "bootstrap-umi": "^4.0.0",
+    "css-loader": "^2.1.0",
+    "jquery": "^3.3.1",
+    "moment": "^2.24.0",
+    "popper.js": "^1.14.7",
+    "style-loader": "^0.23.1",
+    "vue": "^2.6.5",
+    "vue-bootstrap-datetimepicker": "^5.0.1",
+    "vue-loader": "14.2.2",
+    "vue-monthly-picker": "^0.2.6",
+    "vue-router": "^3.0.2",
+    "vue-template-compiler": "^2.6.5"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
+}

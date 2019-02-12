@@ -23,3 +23,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [Refinery CMSを使ったCMS導入！](./refinerycms/README.md)
 
 - [Twitterアカウントでのログイン機能！](./twitter_login/README.md)
+
+- [Rails/Vue.jsでの家計簿アプリ作成！](./accountbook/README.md)
