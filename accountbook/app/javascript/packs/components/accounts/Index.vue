@@ -25,7 +25,7 @@ export default {
     mounted: function() {
         this.getAccounts();
     },
-    method: {
+    methods: {
         getAccounts: function() {
             axios.get('/api/accounts').then(response => {
                 for(let i = 0; i < response.data.length; i++) {
