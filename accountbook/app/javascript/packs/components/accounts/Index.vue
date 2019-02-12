@@ -1,8 +1,5 @@
 <template>
     <div class="container">
-        <p v-for="(account, key, index) in accounts" :key=index>
-            {{account.money}}
-        </p>
         <div class="input-group">
             <div class="input-group-append">
                 <span class="input-group-text">￥</span>
