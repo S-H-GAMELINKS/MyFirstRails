@@ -9,9 +9,13 @@
             </div>
             <input v-model="money" class="form-contorl" placeholder="金額を入力してください!">
         </div>
+        <div class="input-group">
+            <div class="input-group-append">
+                <span class="input-group-text">摘要</span>
+            </div>
             <input v-model="about" class="form-control" placeholder="摘要を入力してください!">
-            <button type="button" class="btn btn-primary" v-on:click="postAccounts">追加</button>
-        </p>
+        </div>
+        <button type="button" class="btn btn-primary" v-on:click="postAccounts">追加</button>
     </div>
 </template>
 
