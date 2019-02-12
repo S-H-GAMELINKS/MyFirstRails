@@ -44,6 +44,12 @@
             <input v-model="about" class="form-control" placeholder="摘要を入力してください!">
         </div>
         <button type="button" class="btn btn-primary" v-on:click="postAccounts">追加</button>
+        <div>
+            <button type="button" class="btn btn-primary" v-on:click="sumCategories">カテゴリごとの集計表示</button>
+            <p v-for="(sum, key, index) in sums" :key=index>
+                {{sum.name.name}} : {{sum.value}}
+            </p>
+        </div>
     </div>
 </template>
 
@@ -69,7 +75,8 @@ export default {
             categories: [],
             incomes: 0,
             payments: 0,
-            query: moment(new Date()).format('YYYY/MM')
+            query: moment(new Date()).format('YYYY/MM'),
+            sums: []
         }
     },
     created: function() {
@@ -145,6 +152,20 @@ export default {
             }, (error) => {
                 console.log(error);
             });
+        },
+        sumCategories: function() {
+            this.sums = [];
+            const date = new Date(this.query);
+            for(var i = 0; i < this.categories.length; i++){
+                this.sums.push({name: this.categories[i], value: 0});
+                for(var j = 0; j < this.accounts.length; j++){
+                    if(this.accounts[j].category === this.categories[i].name 
+                        && moment(this.accounts[j].date).format('YYYY/MM') === moment(date).format('YYYY/MM')){
+                        this.sums[i].value += this.accounts[j].money;
+                    }
+                }
+            }
+            console.log(this.sums);
         },
     },
     components: {
