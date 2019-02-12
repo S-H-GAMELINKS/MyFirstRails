@@ -24,7 +24,13 @@
                 <option selected>Choose...</option>
                 <option :value="ca.name">{{ca.name}}</option>
             </select>
-        </div>        
+        </div>
+        <div class="input-group">
+            <div class="input-group-append">
+                <span class="input-group-text">日付</span>
+            </div>
+            <date-picker v-model="date" :config="options"></date-picker>
+        </div>
         <div class="input-group">
             <div class="input-group-append">
                 <span class="input-group-text">摘要</span>
@@ -37,6 +43,7 @@
 
 <script>
 import axios from 'axios';
+import datePicker from 'vue-bootstrap-datetimepicker';
 
 export default {
     data: function() {
@@ -46,6 +53,11 @@ export default {
             about: "",
             category: "",
             income: false,
+            date: null,
+            options: {
+                format: 'DD/MM/YYYY',
+                useCurrent: false
+            },
             categories: []
         }
     },
@@ -64,7 +76,7 @@ export default {
             })
         },
         postAccounts: function() {
-            axios.post('/api/accounts', {account: {money: Number(this.money), income: this.income, about: this.about, category: this.category}}).then((response) => {
+            axios.post('/api/accounts', {account: {money: Number(this.money), date: this.date, income: this.income, about: this.about, category: this.category}}).then((response) => {
                 this.accounts.unshift(response.data);
                 this.money = "";
                 this.about = "";
@@ -85,6 +97,9 @@ export default {
                 console.log(error);
             })
         }
+    },
+    components: {
+        datePicker
     }
 }
 </script>
