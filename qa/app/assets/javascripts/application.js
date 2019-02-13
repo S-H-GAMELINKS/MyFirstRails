@@ -19,3 +19,7 @@
 //= require select2
 //= require turbolinks
 //= require_tree .
+
+　$(document).ready(function() {
+    　$('select#question_category').select2();
+  });
