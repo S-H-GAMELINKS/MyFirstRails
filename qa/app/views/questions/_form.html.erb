@@ -1,4 +1,4 @@
-<div  data-controller="post">
+<div  data-controller="question">
   <div class="form-left">
     <%= form_with(model: question, local: true) do |form| %>
       <% if question.errors.any? %>
@@ -20,7 +20,7 @@
 
       <div class="field">
         <%= form.label :content %>
-        <%= form.text_area :content %>
+        <%= form.text_area :content, 'data-target': 'question.content', 'data-action': 'input->question#content'  %>
       </div>
 
       <div class="actions">
@@ -31,7 +31,7 @@
 
   <div class="form-right">
     <h1>Content</h1>
-    <div data-target="post.preview"></div>
+    <div data-target="question.preview"></div>
   </div>
 </div>
   
