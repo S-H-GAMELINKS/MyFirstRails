@@ -4,7 +4,8 @@
     </div>
     <%= form_with(model: [ @question, Comment.new ], remote: true) do |form| %>
         Your Comment:<br>
-        <%= form.text_area :content, 'data-target': 'comment.content', 'data-action': 'input->comment#content',  size: '50x20' %><br>
+        <%= form.hidden_field :content, id: :comment_content %>
+        <trix-editor input="comment_content" data-target="comment.content", data-action="input->comment#content"></trix-editor>
         <%= form.submit %>
     <% end %>
 </div>
