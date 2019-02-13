@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 
     def create
         @question.comments.create! comments_params
-        @question.comments.update!(:user_id => current_user.id)
+        @question.comments.update(:user_id => current_user.id)
         redirect_to @question
     end
 
