@@ -1,2 +1,3 @@
 <p><%= comment.content %></p>
 <p><%= link_to "Delete", [@question, comment], method: :delete, data: { confirm: 'Are you sure?' } %> 
+<p><%= link_to "Edit", edit_question_comment_path(@question, comment) %></p>
