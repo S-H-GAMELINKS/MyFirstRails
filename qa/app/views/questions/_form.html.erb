@@ -20,7 +20,8 @@
 
       <div class="field">
         <%= form.label :content %>
-        <%= form.text_area :content, 'data-target': 'question.content', 'data-action': 'input->question#content'  %>
+        <%= form.hidden_field :content, id: :content_text %>
+        <trix-editor input="content_text" data-target="question.content", data-action="input->question#content"></trix-editor>
       </div>
 
       <div class="actions">
