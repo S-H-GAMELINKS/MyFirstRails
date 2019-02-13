@@ -1,8 +1,17 @@
 class CommentsController < ApplicationController
     before_action :set_question
+    before_action :set_comment, only: [:edit, :update]
+
+    def edit
+    end
 
     def create
         @question.comments.create! comments_params
+        redirect_to @question
+    end
+
+    def update
+        @comment.update(comments_params)
         redirect_to @question
     end
 
@@ -16,7 +25,11 @@ class CommentsController < ApplicationController
             @question = Question.find(params[:question_id])
         end
 
-         def comments_params
+        def set_comment
+            @comment = Comment.find(params[:id])
+        end
+
+        def comments_params
             params.required(:comment).permit(:content)
         end
 end
