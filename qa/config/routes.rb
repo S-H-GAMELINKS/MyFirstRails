@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   root 'questions#index'
   resources :questions do
     resources :comments, :only => [:edit, :create, :update, :destroy]
