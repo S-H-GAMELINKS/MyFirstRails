@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @category.name %>
+</p>
+
+<% if user_signed_in? %>
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<% end %>
+<%= link_to 'Back', categories_path %>

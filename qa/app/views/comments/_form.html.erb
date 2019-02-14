@@ -1,0 +1,11 @@
+<div data-controller="comment">
+    <div class="container">
+        <div data-target="comment.preview"></div>
+    </div>
+    <%= form_with(model: [ @question, @comment ], remote: true) do |form| %>
+        Your Comment:<br>
+        <%= form.hidden_field :content, id: :comment_content %>
+        <trix-editor input="comment_content" data-target="comment.content", data-action="input->comment#content"></trix-editor>
+        <%= form.submit %>
+    <% end %> 
+</div>

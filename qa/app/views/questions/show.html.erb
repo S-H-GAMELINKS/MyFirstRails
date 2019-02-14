@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @question.title %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @question.category %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= sanitize @question.content, tags: %w(h1 h2 h3 h4 h5 h6 ul ol li p a img table tr td em br strong div), attributes:  %w(id class href) %>
+</p>
+
+<h2>Comments</h2>
+  <div id="comments">
+    <%= render @question.comments %>
+  </div>
+
+<% if user_signed_in? %>
+<%= render 'comments/new', question: @question %> 
+<% end %>
+
+<% if user_signed_in? && @question.user_id == current_user.id %>
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<% end %>
+<%= link_to 'Back', questions_path %>

@@ -1,0 +1,42 @@
+<div  data-controller="question">
+  <div class="form-left">
+    <%= form_with(model: question, local: true) do |form| %>
+      <% if question.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+          <ul>
+            <% question.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+      </div>
+
+      <div class="field">
+        <%= form.label :category %>
+        <%= form.collection_select(:category, @categories, :name, :name, include_blank: true) %>
+      </div>
+
+      <div class="field">
+        <%= form.label :content %>
+        <%= form.hidden_field :content, id: :content_text %>
+        <trix-editor input="content_text" data-target="question.content", data-action="input->question#content"></trix-editor>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="form-right">
+    <h1>Content</h1>
+    <div data-target="question.preview"></div>
+  </div>
+</div>
