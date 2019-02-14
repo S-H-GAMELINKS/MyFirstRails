@@ -104,4 +104,4 @@ root 'web#hello'
 ![locahost:3000](./images/fix_root_path.png)
 
 ## ライセンス
-[MITライセンス](./LICENSE)
+[MITライセンス](../LICENSE)
