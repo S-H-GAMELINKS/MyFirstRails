@@ -425,3 +425,6 @@ require 'bootsnap/setup' # Speed up boot time by caching expensive operations.
 ```
 
 `rails s`でサーバを起動し、ナビゲーションバーが表示されていればOKです。
+
+## ライセンス
+[MITライセンス](../LICENSE)
