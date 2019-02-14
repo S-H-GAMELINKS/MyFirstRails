@@ -11,7 +11,7 @@
       <%= link_to 'Questoions', questions_path, class: "dropdown-item" %>
       <%= link_to 'Categories', categories_path, class: "dropdown-item" %>
       <% if user_signed_in? %>
-      <%= link_to 'Sign Up', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
       <% else %>
       <%= link_to 'Sign Up', new_user_registration_path, class: "dropdown-item" %>
       <%= link_to 'Sign In', new_user_session_path, class: "dropdown-item" %>
