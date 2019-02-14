@@ -17,5 +17,6 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require select2
+//= require serviceworker-companion
 //= require turbolinks
-//= require_tree .//= require serviceworker-companion
+//= require_tree .
