@@ -15,8 +15,10 @@
       <tr>
         <td><%= category.name %></td>
         <td><%= link_to 'Show', category %></td>
+        <% if user_signed_in? %>
         <td><%= link_to 'Edit', edit_category_path(category) %></td>
         <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +26,6 @@
 
 <br>
 
+<% if user_signed_in? %>
 <%= link_to 'New Category', new_category_path %>
+<% end %>
