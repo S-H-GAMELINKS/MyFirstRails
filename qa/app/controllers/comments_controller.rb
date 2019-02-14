@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
     before_action :set_question
     before_action :set_comment, only: [:edit, :update]
-    before_action :check_login, only: [:edit, create, :update, :destroy]
+    before_action :check_login, only: [:edit, :create, :update, :destroy]
 
     def edit
     end
