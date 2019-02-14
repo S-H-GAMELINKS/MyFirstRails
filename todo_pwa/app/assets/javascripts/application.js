@@ -19,3 +19,7 @@
 //= require select2
 //= require turbolinks
 //= require_tree .
+
+　$(document).ready(function() {
+    　$('select#task_category').select2();
+  });
