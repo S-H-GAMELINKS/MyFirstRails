@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :set_category, only: [:new, :edit]
+  before_action :check_login, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /questions
   # GET /questions.json
@@ -71,6 +72,10 @@ class QuestionsController < ApplicationController
 
     def set_category
       @categories = Category.all
+    end
+
+    def check_login
+      redirect_to :root if current_user == nil
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
