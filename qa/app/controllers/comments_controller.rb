@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
     before_action :set_question
     before_action :set_comment, only: [:edit, :update]
+    before_action :check_login, only: [:edit, create, :update, :destroy]
 
     def edit
     end
@@ -28,6 +29,10 @@ class CommentsController < ApplicationController
 
         def set_comment
             @comment = Comment.find(params[:id])
+        end
+
+        def check_login
+            redirect_to :root if current_user == nil
         end
 
         def comments_params
