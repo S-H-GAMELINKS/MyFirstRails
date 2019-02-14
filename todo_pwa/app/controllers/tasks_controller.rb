@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:new, :edit]
 
   # GET /tasks
   # GET /tasks.json
@@ -67,8 +68,12 @@ class TasksController < ApplicationController
       @task = Task.find(params[:id])
     end
 
+    def set_category
+      @categories = Category.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:title, :content, :date)
+      params.require(:task).permit(:title, :content, :date, :category)
     end
 end
