@@ -8,7 +8,7 @@ class ZipfilesController < ApplicationController
     private
 
         def zipfile_params
-            params.require(:zip).permit(:file)
+            params.require(:zipfile).permit(:file)
         end
 end
   
