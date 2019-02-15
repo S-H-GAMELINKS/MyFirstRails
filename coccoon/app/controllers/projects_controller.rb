@@ -10,11 +10,13 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @tasks = Task.find(@project.task_ids)
   end
 
   # GET /projects/new
   def new
     @project = Project.new
+    @tasks = @project.tasks.build
   end
 
   # GET /projects/1/edit
