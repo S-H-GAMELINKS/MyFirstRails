@@ -18,3 +18,8 @@
     <% end %>
   </tbody>
 </table>
+
+<%= form_with model: @zipfile, local: true do |form| %>
+    <%= form.file_field :file %><br>
+    <%= form.submit %>
+<% end %>
