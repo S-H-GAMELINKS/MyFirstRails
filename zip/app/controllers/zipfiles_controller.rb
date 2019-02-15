@@ -1,4 +1,9 @@
 class ZipfilesController < ApplicationController
+
+    def index
+        @zipfiles = Zipfile.all
+    end
+
     def create
         @zip = Zipfile.new(zipfile_params)
         @zip.save!
