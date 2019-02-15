@@ -1,24 +1,69 @@
-# README
+# SolidusでのECサイト作成！
+## 概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Railsにこれから初めて触れる方を対象としたチュートリアルです
 
-Things you may want to cover:
+今回は、[`Solidus`](https://github.com/solidusio/solidus)を使用したECサイト構築のチュートリアルになります
 
-* Ruby version
+## チュートリアル
+### Railsのひな型を作成する
 
-* System dependencies
+まず、`rails new`を実行し、Railsアプリのひな型を作成します
 
-* Configuration
+```shell
+rails new solidus
+```
 
-* Database creation
+次に、作成した`solidus`ディレクトリへと移動します
 
-* Database initialization
+```shell
+cd solidus
+```
 
-* How to run the test suite
+### SQLite3のバージョンを修正
 
-* Services (job queues, cache servers, search engines, etc.)
+先ほどの`rails new`で`sqlite3`のインストールがエラーになっている場合は、以下のようにバージョンを指定してください
 
-* Deployment instructions
+```ruby:Gemfile
+gem 'sqlite3', '1.3.13'
+```
 
-* ...
+その後、`bundle install`を実行します
+
+```shell
+bundle install
+```
+
+### Solidusの導入
+
+まず、`Gemfile`に`gem 'solidus'`と`gem 'solidus_auth_devise'`を追加します
+
+```ruby:Gemfile
+gem 'solidus'
+gem 'solidus_auth_devise'
+```
+
+また、`gem 'duktape'`をコメントアウトします
+
+```ruby:Gemfile
+# gem 'duktape'
+```
+
+コメントアウト後、`bundle install`を実行します
+
+```shell
+bundle install
+```
+
+その後、以下のコマンドを実行します
+
+```shell
+bundle exec rails g spree:install
+bundle exec rails g solidus:auth:install
+bundle exec rake railties:install:migrations
+```
+
+`Solidus`でのECサイト構築はこれで完了です！
+
+あとは、`rails s`でローカルサーバを起動します
+`localhost:3000`にアクセスし、ECサイトが表示されていればOKです！
