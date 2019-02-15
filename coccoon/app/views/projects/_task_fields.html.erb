@@ -1,0 +1,7 @@
+<div class="nested-fields well well-compact">
+  <div class="form-group">
+    <%= f.text_field :description %>
+    <%= f.check_box :done, as: :boolean %>
+    <%= link_to_remove_association "remove task", f %>
+  </div>
+</div>
