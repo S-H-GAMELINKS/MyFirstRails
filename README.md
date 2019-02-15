@@ -29,3 +29,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [Q&Aサイト作成！](./qa/README.md)
 
 - [PWA対応TODOアプリ作成！](./todo_pwa/README.md)
+
+- [ZIPファイルのアップロードサイト作成！](./zip/README.md)
