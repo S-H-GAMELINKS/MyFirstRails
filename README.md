@@ -37,3 +37,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [SolidusでのECサイト構築！](./solidus/README.md)
 
 - [SpreeでのECサイト構築！](./spree/README.md)
+
+- [meta-tagsでのSEO対策！](./meta-tags/README.md)
