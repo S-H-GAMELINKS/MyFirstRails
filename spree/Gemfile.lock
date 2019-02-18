@@ -1,3 +1,15 @@
+GIT
+  remote: https://github.com/spree-contrib/spree_i18n.git
+  revision: d8c38a41dec58a05abcf67f5d89bf4552edb9216
+  specs:
+    spree_i18n (3.3.2)
+      i18n_data
+      kaminari-i18n
+      rails-i18n
+      routing-filter
+      spree_core (>= 3.1.0, < 4.0)
+      spree_extension
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -131,6 +143,7 @@ GEM
     htmlentities (4.3.4)
     i18n (1.5.3)
       concurrent-ruby (~> 1.0)
+    i18n_data (0.10.0)
     io-like (0.3.0)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
@@ -153,6 +166,9 @@ GEM
       activerecord
       kaminari-core (= 1.0.1)
     kaminari-core (1.0.1)
+    kaminari-i18n (0.5.0)
+      kaminari
+      rails
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -220,6 +236,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
+    rails-i18n (5.1.3)
+      i18n (>= 0.7, < 2)
+      railties (>= 5.0, < 6)
     railties (5.2.2)
       actionpack (= 5.2.2)
       activesupport (= 5.2.2)
@@ -240,6 +259,9 @@ GEM
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
+    routing-filter (0.6.2)
+      actionpack (>= 4.2, < 6)
+      activesupport (>= 4.2, < 6)
     rubyzip (1.2.2)
     sass (3.7.3)
       sass-listen (~> 4.0.0)
@@ -396,6 +418,7 @@ DEPENDENCIES
   spree (~> 3.7.0)
   spree_auth_devise (~> 3.5)
   spree_gateway (~> 3.4)
+  spree_i18n!
   sqlite3 (= 1.3.13)
   turbolinks (~> 5)
   tzinfo-data
