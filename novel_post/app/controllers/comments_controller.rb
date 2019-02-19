@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 
     def create
         @comment = @novel.comments.create! comments_params
-        @comment.update(:score => params[:score])
+        @comment.update(:user_id => current_user.id, :score => params[:score])
         redirect_to @novel
     end
 
