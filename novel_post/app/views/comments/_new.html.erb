@@ -5,3 +5,12 @@
     <trix-editor input="novel_comments"></trix-editor>
     <%= form.submit %>
 <% end %>
+
+<script>
+$(function() {
+    $('.novel_rate').raty({
+        score: 5, 
+        starType: 'i',
+    })
+})
+</script>
