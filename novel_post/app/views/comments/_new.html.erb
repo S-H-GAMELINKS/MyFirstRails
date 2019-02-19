@@ -1,5 +1,4 @@
 <%= form_with(model: [ @novel, Comment.new ], remote: true) do |form| %>
-    <%= form.hidden_field :rate, id: :novel_rate %>
     <div class="novel_rate"></div>
     Your Comment:<br>
     <%= form.hidden_field :content, id: :novel_comments %>
