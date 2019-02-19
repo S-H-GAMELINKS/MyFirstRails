@@ -16,3 +16,13 @@
  */
  @import "trix";
  @import "bootstrap";
+
+ .form-left{
+    width: 50%;
+    float: left;
+}
+
+.form-right{
+    width: 50%;
+    float: right;
+}

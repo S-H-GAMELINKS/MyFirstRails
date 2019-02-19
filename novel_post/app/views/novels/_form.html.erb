@@ -1,28 +1,39 @@
-<%= form_with(model: novel, local: true) do |form| %>
-  <% if novel.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(novel.errors.count, "error") %> prohibited this novel from being saved:</h2>
+<div data-controller="novel">
+  <div class="form-left">
+    <%= form_with(model: novel, local: true) do |form| %>
+      <% if novel.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(novel.errors.count, "error") %> prohibited this novel from being saved:</h2>
 
-      <ul>
-      <% novel.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% novel.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+      <div class="field">
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+      </div>
+
+      <div class="field">
+        <%= form.label :content %>
+        <%= form.hidden_field :content, id: :novel_content %>
+        <trix-editor input="novel_content" data-target="novel.content", data-action="input->novel#content"></trix-editor>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
   </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.hidden_field :content, id: :novel_content %>
-    <trix-editor input="novel_content"></trix-editor>
+  <div class="form-right">
+    <h1>Content</h1>
+    <div data-target="novel.preview"></div>
   </div>
+</div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<%= javascript_pack_tag 'application.js' %>
