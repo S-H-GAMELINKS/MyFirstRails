@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "raty-js": "^2.9.0",
     "stimulus": "^1.1.1"
   },
   "devDependencies": {
