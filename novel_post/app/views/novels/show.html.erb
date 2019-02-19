@@ -10,5 +10,10 @@
   <%= @novel.content %>
 </p>
 
+<h2>Comments</h2>
+  <div id="comments">
+    <%= render @post.comments %>
+  </div>
+
 <%= link_to 'Edit', edit_novel_path(@novel) %> |
 <%= link_to 'Back', novels_path %>
