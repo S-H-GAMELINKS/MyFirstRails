@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Novels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @novels.each do |novel| %>
+      <tr>
+        <td><%= novel.title %></td>
+        <td><%= novel.content %></td>
+        <td><%= link_to 'Show', novel %></td>
+        <td><%= link_to 'Edit', edit_novel_path(novel) %></td>
+        <td><%= link_to 'Destroy', novel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Novel', new_novel_path %>
