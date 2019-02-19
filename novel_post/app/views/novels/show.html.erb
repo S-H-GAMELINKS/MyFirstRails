@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @novel.title %>
+</p>
+
+<p>
+  <strong>Auther:</strong>
+  <%= @novel.auther %>
+</p>
+
+
+<p>
+  <strong>Content:</strong>
+  <%= sanitize @novel.content, tags: %w(h1 h2 h3 h4 h5 h6 ul ol li p a img table tr td em br strong div), attributes:  %w(id class href) %>
+</p>
+
+<h2>Comments</h2>
+  <div id="comments">
+    <%= render @novel.comments %>
+  </div>
+
+<% if user_signed_in? %>
+<%= render 'comments/new', novel: @novel %> 
+<% end %>
+
+<% if user_signed_in? && @novel.user_id == current_user.id %>
+<%= link_to 'Edit', edit_novel_path(@novel) %> |
+<% end %>
+<%= link_to 'Back', novels_path %>
