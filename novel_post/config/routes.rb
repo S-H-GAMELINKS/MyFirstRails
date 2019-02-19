@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users, :only => [:show, :edit, :update]
   root 'novels#index'
   resources :novels do
     resources :comments, :only => [:create, :destroy]
