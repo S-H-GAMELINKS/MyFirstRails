@@ -41,6 +41,9 @@ gem 'trix'
 gem 'bootstrap', '~> 4.2.1'
 gem 'jquery-rails'
 
+# Using Devise
+gem 'devise'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
