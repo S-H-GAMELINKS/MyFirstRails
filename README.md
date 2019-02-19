@@ -39,3 +39,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [SpreeでのECサイト構築！](./spree/README.md)
 
 - [meta-tagsでのSEO対策！](./meta-tags/README.md)
+
+- [小説投稿サイトの作成！](./novel_post/README.md)
