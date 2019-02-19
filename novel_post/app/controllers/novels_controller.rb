@@ -26,6 +26,7 @@ class NovelsController < ApplicationController
   # POST /novels.json
   def create
     @novel = Novel.new(novel_params)
+    @novel.user_id = current_user.id
 
     respond_to do |format|
       if @novel.save
