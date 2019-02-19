@@ -21,5 +21,5 @@
 //= require_tree .
 
 $(function() {
-    $('.novel_rate').raty({score: 4, starType: 'i'})
+    $('.novel_rate').raty({score: 5, starType: 'i'})
 })
