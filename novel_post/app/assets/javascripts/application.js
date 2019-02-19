@@ -19,3 +19,7 @@
 //= require raty-js
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+    $('.novel_rate').raty({score: 4, starType: 'i'})
+})
