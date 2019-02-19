@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
     before_action :set_novel
+    before_action :check_login, only: [:edit, :create, :update, :destroy]
 
     def create
         @comment = @novel.comments.create! comments_params
@@ -17,7 +18,11 @@ class CommentsController < ApplicationController
             @novel = Novel.find(params[:novel_id])
         end
 
-         def comments_params
+        def check_login
+            redirect_to :root if current_user == nil
+        end
+
+        def comments_params
             params.required(:comment).permit(:content)
         end
 end
