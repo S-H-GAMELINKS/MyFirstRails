@@ -1,5 +1,7 @@
 <%= form_with(model: [ @novel, Comment.new ], remote: true) do |form| %>
     <div class="novel_rate"></div>
+    Your Name:<br>
+    <%= form.text_field :auther %>
     Your Comment:<br>
     <%= form.hidden_field :content, id: :novel_comments %>
     <trix-editor input="novel_comments"></trix-editor>
