@@ -11,11 +11,14 @@ class NovelsController < ApplicationController
   # GET /novels/1
   # GET /novels/1.json
   def show
+    @comment = Comment.new
+    @comment.auther = current_user.name
   end
 
   # GET /novels/new
   def new
     @novel = Novel.new
+    @novel.auther = current_user.name
   end
 
   # GET /novels/1/edit
