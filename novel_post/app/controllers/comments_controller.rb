@@ -1,19 +1,19 @@
 class CommentsController < ApplicationController
-    before_action :set_post
+    before_action :set_novel
 
     def create
-        @post.comments.create! comments_params
-        redirect_to @post
+        @novel.comments.create! comments_params
+        redirect_to @novel
     end
 
     def destroy
-        @post.comments.destroy params[:id]
-        redirect_to @post
+        @novel.comments.destroy params[:id]
+        redirect_to @novel
     end
 
      private
-        def set_post
-            @post = Post.find(params[:post_id])
+        def set_novel
+            @novel = Novel.find(params[:novel_id])
         end
 
          def comments_params
