@@ -2,7 +2,7 @@
 ## 概要
 
 Railsにこれから初めて触れる方を対象にしたチュートリアルです
-今回は、[`Coccoon`](https://github.com/nathanvda/cocoon)でのネストされた動的なフォームを実装します
+今回は、[`Cocoon`](https://github.com/nathanvda/cocoon)でのネストされた動的なフォームを実装します
 
 ## チュートリアル
 ### Railsのひな型を作る
@@ -10,13 +10,13 @@ Railsにこれから初めて触れる方を対象にしたチュートリアル
 まず、`rails new`を実行し、Railsアプリのひな型を作成します
 
 ```shell
-rails new coccoon
+rails new cocoon
 ```
 
-次に、作成した`coccoon`ディレクトリへと移動します
+次に、作成した`cocoon`ディレクトリへと移動します
 
 ```shell
-cd coccoon
+cd cocoon
 ```
 
 ### SQLite3のバージョンを修正
@@ -68,7 +68,7 @@ end
 まず、`Gemfile`に`gem 'coccoon'`と`gem 'jquery-rails'`を追加します
 
 ```ruby:Gemfile
-gem 'coccoon'
+gem 'cocoon'
 gem 'jquery-rails'
 ```
 
