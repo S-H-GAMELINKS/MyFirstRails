@@ -219,7 +219,7 @@ end
 <p>
   <strong>movies:</strong>
   <% if @movie.movie.attached? %>
-    <% video_tag @movie.movie, :controls => true %>
+    <% video_tag rails_blob_path(@movie.movie, disposition: "attachment"), :controls => true %>
   <% end %>
 </p>
 
@@ -284,7 +284,7 @@ end
 <p>
   <strong>movies:</strong>
   <% if @movie.movie.attached? %>
-    <% video_tag @movie.movie, :controls => true %>
+    <% video_tag rails_blob_path(@movie.movie, disposition: "attachment"), :controls => true %>
   <% end %>
 </p>
 
@@ -510,7 +510,7 @@ bundle install
 <p>
   <strong>movies:</strong>
   <% if @movie.movie.attached? %>
-    <% video_tag @movie.movie, :controls => true %>
+    <% video_tag rails_blob_path(@movie.movie, disposition: "attachment"), :controls => true %>
   <% end %>
 </p>
 
@@ -1058,7 +1058,7 @@ end
 <p>
   <strong>movies:</strong>
   <% if @movie.movie.attached? %>
-    <% video_tag @movie.movie, :controls => true %>
+    <% video_tag rails_blob_path(@movie.movie, disposition: "attachment"), :controls => true %>
   <% end %>
 </p>
 
@@ -1437,7 +1437,7 @@ end
 <p>
   <strong>movies:</strong>
   <% if @movie.movie.attached? %>
-    <% video_tag @movie.movie, :controls => true %>
+    <% video_tag rails_blob_path(@movie.movie, disposition: "attachment"), :controls => true %>
   <% end %>
 </p>
 
