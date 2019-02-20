@@ -1190,6 +1190,10 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
       end
 
+      def check_login
+        redirect_to :root if current_user == nil || @user.id != current_user.id
+      end
+
        # Never trust parameters from the scary internet, only allow the white list through.
       def user_params
         params.require(:user).permit(:name)
