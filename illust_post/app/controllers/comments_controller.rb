@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
 
      private
         def set_illust
-            @post = Illust.find(params[:illust_id])
+            @illust = Illust.find(params[:illust_id])
         end
 
          def comments_params
