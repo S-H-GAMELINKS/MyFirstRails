@@ -355,7 +355,7 @@ class CommentsController < ApplicationController
 
      private
         def set_movie
-            @movie = movie.find(params[:movie_id])
+            @movie = Movie.find(params[:movie_id])
         end
 
          def comments_params
