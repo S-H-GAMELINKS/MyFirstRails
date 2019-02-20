@@ -1551,15 +1551,6 @@ end
 <% end %>
 ```
 
-```erb:app/views/users/edit.html.erb
-<h1>Editing Name</h1>
-
-<%= render 'form', user: @user %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', root_path %> 
-```
-
 ```erb:app/views/comments/_comment.html.erb
 <p><%= comment.auther %></p>
 <p><%= tag.div('', class: 'score', data: {score: comment.score}) %></p>
