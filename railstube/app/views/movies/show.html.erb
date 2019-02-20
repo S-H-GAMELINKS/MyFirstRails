@@ -10,5 +10,12 @@
   <%= @movie.content %>
 </p>
 
+<p>
+  <strong>movies:</strong>
+  <% if @movie.movie.attached? %>
+    <% video_tag @movie.movie, :controls => true %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
