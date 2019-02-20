@@ -2,7 +2,8 @@ class CommentsController < ApplicationController
     before_action :set_illust
 
     def create
-        @illust.comments.create! comments_params
+        @comment = @illust.comments.create! comments_params
+        @comment.update(:score => params[:score])
         redirect_to @illust
     end
 
