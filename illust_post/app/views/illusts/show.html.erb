@@ -24,5 +24,7 @@
     <%= render @illust.comments %>
   </div>
 
+<%= render 'comments/new', illust: @illust %> 
+
 <%= link_to 'Edit', edit_illust_path(@illust) %> |
 <%= link_to 'Back', illusts_path %>
