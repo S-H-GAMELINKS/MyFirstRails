@@ -10,5 +10,14 @@
   <%= @illust.content %>
 </p>
 
+<p>
+  <strong>Illusts:</strong>
+  <% if @illust.illusts.attached? %>
+    <% @illust.illusts.each do |illust| %>
+      <%= image_tag illust %> <br>
+    <% end %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_illust_path(@illust) %> |
 <%= link_to 'Back', illusts_path %>
