@@ -24,7 +24,11 @@
     <%= render @illust.comments %>
   </div>
 
+<% if user_signed_in? %>
 <%= render 'comments/new', illust: @illust %> 
+<% end %>
 
+<% if user_signed_in? && @illust.user_id == current_user.id %>
 <%= link_to 'Edit', edit_illust_path(@illust) %> |
+<% end %>
 <%= link_to 'Back', illusts_path %>
