@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'illusts#index'
   resources :illusts do
     resources :comments, :only => [:create, :destroy]
