@@ -40,6 +40,9 @@ class IllustsController < ApplicationController
   # PATCH/PUT /illusts/1
   # PATCH/PUT /illusts/1.json
   def update
+
+    purge_illusts
+
     respond_to do |format|
       if @illust.update(illust_params)
         format.html { redirect_to @illust, notice: 'Illust was successfully updated.' }
@@ -65,6 +68,15 @@ class IllustsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_illust
       @illust = Illust.find(params[:id])
+    end
+
+    def purge_illusts
+      if params[:illust][:illust_ids].class != nil.class 
+        params[:illust][:illust_ids].each do |image_id|
+          illust = @illust.illusts.find(image_id)
+          illust.purge
+        end
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
