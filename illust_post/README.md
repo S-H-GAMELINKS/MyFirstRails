@@ -191,7 +191,7 @@ end
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.text_area :content %>
   </div>
 
   <div class="field">
