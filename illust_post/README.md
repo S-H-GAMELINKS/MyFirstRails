@@ -168,7 +168,7 @@ class IllustsController < ApplicationController
 end
 ```
 
-そして`app/views/illusts/_form.html.erb`と``を編集します
+そして`app/views/illusts/_form.html.erb`と`app/views/illusts/show.html.erb`を編集します
 
 ```erb:app/views/illusts/_form.html.erb
 <%= form_with(model: illust, local: true) do |form| %>
