@@ -346,7 +346,7 @@ end
 
 ```erb:app/views/comments/_comment.html.erb
 <p><%= comment.content %></p>
-<p><%= link_to "Delete", [@illust, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+<p><%= link_to "Delete", [@illust, comment], method: :delete, data: { confirm: 'Are you sure?' } %></p>
 ```
 
 次に、`app/views/comments/_new.html.erb`を作成します
@@ -573,7 +573,7 @@ bundle install
 
 ```erb:app/views/comments/_comment.html.erb
 <p><%= sanitize comment.content, tags: %w(h1 h2 h3 h4 h5 h6 ul ol li p a img table tr td em br strong div), attributes:  %w(id class href) %></p>1
-<p><%= link_to "Delete", [@illust, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+<p><%= link_to "Delete", [@illust, comment], method: :delete, data: { confirm: 'Are you sure?' } %></p>
 ```
 
 ### Bootstrap4の適用
@@ -801,7 +801,7 @@ end
 ```erb:app/views/comments/_comment.html.erb
 <p><%= tag.div('', class: 'score', data: {score: comment.score}) %></p>
 <p><%= sanitize comment.content, tags: %w(h1 h2 h3 h4 h5 h6 ul ol li p a img table tr td em br strong div), attributes:  %w(id class href) %></p>
-<p><%= link_to "Delete", [@illust, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+<p><%= link_to "Delete", [@illust, comment], method: :delete, data: { confirm: 'Are you sure?' } %></p>
 
 <script>
 $(function() {
@@ -1120,7 +1120,7 @@ end
 <p><%= tag.div('', class: 'score', data: {score: comment.score}) %></p>
 <p><%= sanitize comment.content, tags: %w(h1 h2 h3 h4 h5 h6 ul ol li p a img table tr td em br strong div), attributes:  %w(id class href) %></p>
 <% if user_signed_in? && comment.user_id == current_user.id %>
-<p><%= link_to "Delete", [@illust, comment], method: :delete, data: { confirm: 'Are you sure?' } %> 
+<p><%= link_to "Delete", [@illust, comment], method: :delete, data: { confirm: 'Are you sure?' } %></p>
 <% end %>
 
 <script>
