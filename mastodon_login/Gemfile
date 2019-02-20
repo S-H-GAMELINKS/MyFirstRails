@@ -38,6 +38,11 @@ gem 'devise'
 # Using Dotenv-rails
 gem 'dotenv-rails'
 
+# Using Mastodon Login
+gem 'omniauth'
+gem 'omniauth-mastodon'
+gem 'mastodon-api', require: 'mastodon'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
