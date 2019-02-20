@@ -22,5 +22,7 @@
     <%= render @movie.comments %>
   </div>
 
+<%= render 'comments/new', movie: @movie %> 
+
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
