@@ -800,7 +800,7 @@ end
 
 ```erb:app/views/comments/_comment.html.erb
 <p><%= tag.div('', class: 'score', data: {score: comment.score}) %></p>
-<p><%= sanitize comment.content, tags: %w(h1 h2 h3 h4 h5 h6 ul ol li p a img table tr td em br strong div), attributes:  %w(id class href) %></p>1
+<p><%= sanitize comment.content, tags: %w(h1 h2 h3 h4 h5 h6 ul ol li p a img table tr td em br strong div), attributes:  %w(id class href) %></p>
 <p><%= link_to "Delete", [@illust, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <script>
