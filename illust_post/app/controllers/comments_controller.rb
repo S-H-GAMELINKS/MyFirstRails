@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
     before_action :set_illust
+    before_action :check_login, only: [:create, :destroy]
 
     def create
         @comment = @illust.comments.create! comments_params
@@ -17,7 +18,11 @@ class CommentsController < ApplicationController
             @illust = Illust.find(params[:illust_id])
         end
 
-         def comments_params
+        def check_login
+            redirect_to :root if current_user == nil
+        end
+
+        def comments_params
             params.required(:comment).permit(:content)
         end
 end
