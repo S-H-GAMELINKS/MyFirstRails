@@ -48,7 +48,7 @@ bundle install
 
 ```shell
 rails g devise:install
-``
+```
 
 次に、`Devise`で使用する`View`ファイルを作成します
 
