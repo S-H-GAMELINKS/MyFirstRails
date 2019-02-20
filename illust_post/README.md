@@ -998,6 +998,15 @@ class IllustsController < ApplicationController
       @illust = Illust.find(params[:id])
     end
 
+    def purge_illusts
+      if params[:illust][:illust_ids].class != nil.class 
+        params[:illust][:illust_ids].each do |image_id|
+          illust = @illust.illusts.find(image_id)
+          illust.purge
+        end
+      end
+    end
+
     def check_login
       redirect_to :root if current_user == nil
     end
