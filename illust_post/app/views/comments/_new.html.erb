@@ -1,5 +1,7 @@
-<%= form_with(model: [ @illust, Comment.new ], remote: true) do |form| %>
+<%= form_with(model: [ @illust, @comment ], remote: true) do |form| %>
     <div class="illust_rate"></div>
+    Your Name :<br>
+    <%= form.text_field :auther %><br>
     Your Comment:<br>
     <%= form.hidden_field :content, id: :illust_comments %>
     <trix-editor input="illust_comments"></trix-editor>
