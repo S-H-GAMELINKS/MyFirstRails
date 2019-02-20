@@ -11,11 +11,14 @@ class IllustsController < ApplicationController
   # GET /illusts/1
   # GET /illusts/1.json
   def show
+    @comment = Comment.new
+    @comment.auther = current_user.name
   end
 
   # GET /illusts/new
   def new
     @illust = Illust.new
+    @illust.auther = current_user.name
   end
 
   # GET /illusts/1/edit
