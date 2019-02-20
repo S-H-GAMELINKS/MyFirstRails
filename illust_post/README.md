@@ -971,6 +971,9 @@ class IllustsController < ApplicationController
   # PATCH/PUT /illusts/1
   # PATCH/PUT /illusts/1.json
   def update
+
+    purge_illusts
+
     respond_to do |format|
       if @illust.update(illust_params)
         format.html { redirect_to @illust, notice: 'Illust was successfully updated.' }
@@ -1395,7 +1398,7 @@ class CommentsController < ApplicationController
     def create
         @comment = @illust.comments.create! comments_params
         @comment.update(:user_id => current_user.id, :score => params[:score])
-        redirect_to @illust
+        redirect_to @illust1
     end
 
     def destroy
