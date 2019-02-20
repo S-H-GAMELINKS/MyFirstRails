@@ -1,5 +1,7 @@
 {
   "name": "illust_post",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "raty-js": "^2.9.0"
+  }
 }
