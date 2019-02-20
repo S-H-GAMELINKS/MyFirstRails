@@ -1397,7 +1397,7 @@ class IllustsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def illust_params
-      params.require(:illust).permit(:title, :content, :auther)
+      params.require(:illust).permit(:title, :content, :auther, , illusts: [])
     end
 end
 ```
