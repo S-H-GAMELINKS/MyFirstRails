@@ -102,7 +102,7 @@ bundle install
 `.env`は`Gemfile`と同じ位置に作成します
 
 ```:.env
-# Using Twitter API
+# Using Mastodon API
 MASTODON_CLIENT_KEY=`クライアントキー`
 MASTODON_SECRET_KEY=`シークレットキー`
 ```
