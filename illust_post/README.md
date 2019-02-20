@@ -1537,6 +1537,14 @@ end
     <%= form.file_field :illusts, multiple: true %>
   </div>
 
+  <% if illust.illusts.attached? %>
+    <p>Check Delete Illust</p>
+    <% illust.illusts.each do |image| %>
+      <%= form.check_box :illust_ids, {:multiple => true}, image.id, false %>
+      <%= image_tag image, :size=>"100x100" %> <br>
+    <% end %>
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
