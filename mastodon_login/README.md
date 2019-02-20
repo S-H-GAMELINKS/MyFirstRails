@@ -209,7 +209,7 @@ Devise.setup do |config|
 end
 ```
 
-`Dotenv`経由でTwitterのAPIキーなどを読み取っています
+`Dotenv`経由でMastodonのクライアントキーなどを読み取っています
 
 
 その後、`User`モデルに`:omniauthable`を追加します
