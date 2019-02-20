@@ -1021,7 +1021,7 @@ end
 ```ruby:app/controllers/comments_controller.rb
 class CommentsController < ApplicationController
     before_action :set_illust
-    before_action :check_login, only: [:edit, :create, :update, :destroy]
+    before_action :check_login, only: [:create, :destroy]
 
     def create
         @comment = @illust.comments.create! comments_params
