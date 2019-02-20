@@ -12,7 +12,7 @@ class IllustsController < ApplicationController
   # GET /illusts/1.json
   def show
     @comment = Comment.new
-    @comment.auther = current_user.name
+    @comment.auther = current_user.name if current_user != nil
   end
 
   # GET /illusts/new
