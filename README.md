@@ -41,3 +41,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [meta-tagsでのSEO対策！](./meta-tags/README.md)
 
 - [小説投稿サイトの作成！](./novel_post/README.md)
+
+- [イラスト投稿サイトの作成！](./illust_post/README.md)

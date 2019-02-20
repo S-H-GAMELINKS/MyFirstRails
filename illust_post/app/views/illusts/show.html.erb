@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @illust.title %>
+</p>
+
+<p>
+  <strong>Auther:</strong>
+  <%= @illust.auther %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= sanitize @illust.content, tags: %w(h1 h2 h3 h4 h5 h6 ul ol li p a img table tr td em br strong div), attributes:  %w(id class href) %>
+</p>
+
+<p>
+  <strong>Illusts:</strong>
+  <% if @illust.illusts.attached? %>
+    <% @illust.illusts.each do |illust| %>
+      <%= image_tag illust %> <br>
+    <% end %>
+  <% end %>
+</p>
+
+<h2>Comments</h2>
+  <div id="comments">
+    <%= render @illust.comments %>
+  </div>
+
+<% if user_signed_in? %>
+<%= render 'comments/new', illust: @illust %> 
+<% end %>
+
+<% if user_signed_in? && @illust.user_id == current_user.id %>
+<%= link_to 'Edit', edit_illust_path(@illust) %> |
+<% end %>
+<%= link_to 'Back', illusts_path %>

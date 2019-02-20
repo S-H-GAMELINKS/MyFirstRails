@@ -1,0 +1,5 @@
+<%= @user.name %>
+
+ <% if current_user.id == @user.id %>
+<%= link_to 'Edit Name', edit_user_path(@user) %>
+<% end %> 

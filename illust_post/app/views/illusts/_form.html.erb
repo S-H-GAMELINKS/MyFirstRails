@@ -1,0 +1,46 @@
+<%= form_with(model: illust, local: true) do |form| %>
+  <% if illust.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(illust.errors.count, "error") %> prohibited this illust from being saved:</h2>
+
+      <ul>
+      <% illust.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :auther %>
+    <%= form.text_field :auther %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.hidden_field :content, id: :illust_content %>
+    <trix-editor input="illust_content"></trix-editor>
+  </div>
+
+  <div class="field">
+    <%= form.label :illusts %>
+    <%= form.file_field :illusts, multiple: true %>
+  </div>
+
+  <% if illust.illusts.attached? %>
+    <p>Check Delete Illust</p>
+    <% illust.illusts.each do |image| %>
+      <%= form.check_box :illust_ids, {:multiple => true}, image.id, false %>
+      <%= image_tag image, :size=>"100x100" %> <br>
+    <% end %>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
