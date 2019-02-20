@@ -43,3 +43,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [小説投稿サイトの作成！](./novel_post/README.md)
 
 - [イラスト投稿サイトの作成！](./illust_post/README.md)
+
+- [Mastodonアカウントでのログイン機能！](./mastodon_login/README.md)
