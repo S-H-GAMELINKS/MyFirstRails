@@ -19,5 +19,10 @@
   <% end %>
 </p>
 
+<h2>Comments</h2>
+  <div id="comments">
+    <%= render @illust.comments %>
+  </div>
+
 <%= link_to 'Edit', edit_illust_path(@illust) %> |
 <%= link_to 'Back', illusts_path %>
