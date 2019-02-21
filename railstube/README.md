@@ -662,9 +662,9 @@ require 'bootsnap/setup' # Speed up boot time by caching expensive operations.
 
 `rails s`でサーバを起動し、ナビゲーションバーが表示されていればOKです
 
-### ratyでの小説の評価機能
+### ratyでの動画の評価機能
 
-イラスト投稿サイトですのでイラストに対して評価がつけれるようにしたいと思います
+動画投稿サイトですので動画に対して評価がつけれるようにしたいと思います
 
 実装には`raty`を使用します
 
