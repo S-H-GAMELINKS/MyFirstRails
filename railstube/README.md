@@ -1501,7 +1501,9 @@ end
 <p><%= comment.auther %></p>
 <p><%= tag.div('', class: 'score', data: {score: comment.score}) %></p>
 <p><%= sanitize comment.content, tags: %w(h1 h2 h3 h4 h5 h6 ul ol li p a img table tr td em br strong div), attributes:  %w(id class href) %></p>1
-<p><%= link_to "Delete", [@movie, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+<% if user_signed_in? && comment.user_id == current_user.id %>
+<p><%= link_to "Delete", [@movie, comment], method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% end %>
 
 <script>
 $(function() {
