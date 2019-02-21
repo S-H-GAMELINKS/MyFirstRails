@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_action :check_login, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /movies
   # GET /movies.json
@@ -25,6 +26,7 @@ class MoviesController < ApplicationController
   # POST /movies.json
   def create
     @movie = Movie.new(movie_params)
+    @movie.user_id = current_user.id
 
     respond_to do |format|
       if @movie.save
@@ -65,6 +67,10 @@ class MoviesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_movie
       @movie = Movie.find(params[:id])
+    end
+
+    def check_login
+      redirect_to :root if current_user == nil || @movie.user_id != current_user.id
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
