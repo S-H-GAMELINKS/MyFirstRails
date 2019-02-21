@@ -566,3 +566,5 @@ bundle install
 
 これで、`localhost:3000/tasks/new`でカテゴリを登録する際にプルダウン検索が使用できるようになりました！
 
+## ライセンス
+[MITライセンス](../LICENSE)
