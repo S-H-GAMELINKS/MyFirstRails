@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
     before_action :set_movie
+    before_action :check_login, only: [:destroy]
 
     def create
         @comment = @movie.comments.create! comments_params
-        @comment.update(:score => params[:score])
+        @comment.update(:user_id => current_user.id, :score => params[:score])
         redirect_to @movie
     end
 
@@ -17,7 +18,11 @@ class CommentsController < ApplicationController
             @movie = Movie.find(params[:movie_id])
         end
 
-         def comments_params
+        def check_login
+            redirect_to :root if current_user == nil  || @movie.comments.find(params[:id]).user_id != current_user.id
+        end
+
+        def comments_params
             params.required(:comment).permit(:content)
         end
 end
