@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :auther %>
+    <%= form.text_field :auther %>
+  </div>
+
+  <div class="field">
     <%= form.label :content %>
     <%= form.hidden_field :content, id: :movie_content %>
     <trix-editor input="movie_content"></trix-editor>
