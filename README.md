@@ -45,3 +45,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [イラスト投稿サイトの作成！](./illust_post/README.md)
 
 - [Mastodonアカウントでのログイン機能！](./mastodon_login/README.md)
+
+- [動画配信サイトの作成！](./railstube/README.md)
