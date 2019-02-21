@@ -11,11 +11,13 @@ class MoviesController < ApplicationController
   # GET /movies/1
   # GET /movies/1.json
   def show
+    @comment.auther = current_user.name if current_user != nil
   end
 
   # GET /movies/new
   def new
     @movie = Movie.new
+    @movie.auther = current_user.name
   end
 
   # GET /movies/1/edit
@@ -75,6 +77,6 @@ class MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.require(:movie).permit(:title, :content, :movie)
+      params.require(:movie).permit(:title, :content, :auther, :movie)
     end
 end
