@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_21_014126) do
+ActiveRecord::Schema.define(version: 2019_02_21_031652) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -39,7 +39,9 @@ ActiveRecord::Schema.define(version: 2019_02_21_014126) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "score"
+    t.integer "user_id"
     t.index ["movie_id"], name: "index_comments_on_movie_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -47,6 +49,8 @@ ActiveRecord::Schema.define(version: 2019_02_21_014126) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_movies_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
