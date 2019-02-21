@@ -15,8 +15,10 @@
       <tr>
         <td><%= movie.title %></td>
         <td><%= link_to 'Show', movie %></td>
+        <% if user_signed_in? && movie.user_id == current_user.id %>
         <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
         <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +26,6 @@
 
 <br>
 
+<% if user_signed_in? %>
 <%= link_to 'New Movie', new_movie_path %>
+<% end %>
