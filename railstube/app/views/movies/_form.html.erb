@@ -18,7 +18,8 @@
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.hidden_field :content, id: :movie_content %>
+    <trix-editor input="movie_content"></trix-editor>
   </div>
 
   <div class="field">
