@@ -22,7 +22,11 @@
     <%= render @movie.comments %>
   </div>
 
+<% if user_signed_in? %>
 <%= render 'comments/new', movie: @movie %> 
+<% end %>
 
+<% if user_signed_in? && @movie.user_id == current_user.id %>
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
+<% end %>
 <%= link_to 'Back', movies_path %>
