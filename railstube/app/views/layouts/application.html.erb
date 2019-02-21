@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Railstube</title>
+    <title>Rails Tube</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/header'%>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
