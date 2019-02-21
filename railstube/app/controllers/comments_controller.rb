@@ -2,7 +2,8 @@ class CommentsController < ApplicationController
     before_action :set_movie
 
     def create
-        @movie.comments.create! comments_params
+        @comment = @movie.comments.create! comments_params
+        @comment.update(:score => params[:score])
         redirect_to @movie
     end
 
