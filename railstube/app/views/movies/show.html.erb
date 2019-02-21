@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @movie.title %>
+</p>
+
+<p>
+  <strong>Auther:</strong>
+  <%= @movie.auther %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= sanitize @movie.content, tags: %w(h1 h2 h3 h4 h5 h6 ul ol li p a img table tr td em br strong div), attributes:  %w(id class href) %>
+</p>
+
+<p>
+  <strong>movies:</strong>
+  <% if @movie.movie.attached? %>
+    <%= video_tag rails_blob_path(@movie.movie, disposition: "attachment"), :controls => true %>
+  <% end %>
+</p>
+
+<h2>Comments</h2>
+  <div id="comments">
+    <%= render @movie.comments %>
+  </div>
+
+<% if user_signed_in? %>
+<%= render 'comments/new', movie: @movie %> 
+<% end %>
+
+<% if user_signed_in? && @movie.user_id == current_user.id %>
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<% end %>
+<%= link_to 'Back', movies_path %>

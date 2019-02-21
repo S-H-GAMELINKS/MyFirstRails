@@ -1,0 +1,38 @@
+<%= form_with(model: movie, local: true) do |form| %>
+  <% if movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :auther %>
+    <%= form.text_field :auther %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.hidden_field :content, id: :movie_content %>
+    <trix-editor input="movie_content"></trix-editor>
+  </div>
+
+  <div class="field">
+    <%= form.label :movie %>
+    <%= form.file_field :movie %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

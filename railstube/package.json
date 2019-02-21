@@ -1,0 +1,7 @@
+{
+  "name": "railstube",
+  "private": true,
+  "dependencies": {
+    "raty-js": "^2.9.0"
+  }
+}
