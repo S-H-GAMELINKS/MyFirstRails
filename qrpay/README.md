@@ -845,6 +845,16 @@ yarn add vue-payjp-checkout
 yarn add vue-qrcode-reader
 ```
 
+その後、`PAY.jp`で決済するための`gem`を追加します
+
+```ruby:Gemfile
+# Using Pay.jp for Ruby
+gem 'payjp'
+
+# Using Dotenv Rails
+gem 'dotenv-rails'
+```
+
 次に、QRコードの読込とクレジットカードのトークン作成画面を作ります
 
 `app/javascript/packs/components/web/Payment.vue`を以下のように作成します
@@ -965,7 +975,7 @@ class Api::PaymentsController < ApplicationController
   end
 ```
 
-最後に、`config/routes.rb`を編集し、決済APIへのルーティングを設定します
+`config/routes.rb`を編集し、決済APIへのルーティングを設定します
 
 ```ruby:config/routes.rb
 Rails.application.routes.draw do
@@ -978,6 +988,30 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+```
+
+`app/javascript/packs/components/layouts/Header.vue`を以下のように編集します
+
+```vue:app/javascript/packs/components/layouts/Header.vue
+<template>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <router-link class="navbar-brand" to="/">Rails Pay</router-link>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Menu
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <router-link to="/" class="dropdown-item">Top</router-link>
+                    <router-link to="/about" class="dropdown-item">About</router-link>
+                    <router-link to="/contact" class="dropdown-item">Contact</router-link>
+                    <router-link to="/products" class="dropdown-item">Product</router-link>
+                    <router-link to="/payments" class="dropdown-item">Payment</router-link>
+                </div>
+            </div>
+        </nav>
+    </div>    
+</template>
 ```
 
 これでクレジットカードをフォームから登録し、QRコードを読み込めば支払いができます！
