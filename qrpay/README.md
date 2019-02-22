@@ -202,7 +202,6 @@ module.exports = environment
 ```erb:app/views/web/index.html.erb
 <div class="app">
     <nav-bar></nav-bar>
-    {{message}}
 </div>
 
 <%= javascript_pack_tag 'index' %>
