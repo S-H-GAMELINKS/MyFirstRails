@@ -465,13 +465,13 @@ end
 yarn add axios
 ```
 
-次に、`app/javascript/packs/components/product`ディレクトリ以下に
-`app/javascript/packs/components/product/Index.vue`、`app/javascript/packs/components/product/Show.vue`、
-`app/javascript/packs/components/product/Create.vue`、`app/javascript/packs/components/product/Edit.vue`、
-`app/javascript/packs/components/product/Form.vue`を作成します
+次に、`app/javascript/packs/components/products`ディレクトリ以下に
+`app/javascript/packs/components/products/Index.vue`、`app/javascript/packs/components/products/Show.vue`、
+`app/javascript/packs/components/products/Create.vue`、`app/javascript/packs/components/products/Edit.vue`、
+`app/javascript/packs/components/products/Form.vue`を作成します
 
 
-```app/javascript/packs/components/product/Index.vue
+```app/javascript/packs/components/products/Index.vue
 <template>
     <div>
         <div class="container">
@@ -487,7 +487,6 @@ yarn add axios
 
 <script>
 import axios from 'axios';
-import $ from 'jquery';
 
 export default {
     data: function() {
@@ -527,7 +526,7 @@ export default {
 </script>
 ```
 
-```app/javascript/packs/components/product/Show.vue
+```app/javascript/packs/components/products/Show.vue
 <template>
     <div class="container">
         <p><h1>Name: {{name}} </h1></p>
@@ -540,7 +539,6 @@ export default {
 
 <script>
 import axios from 'axios';
-import $ from 'jquery';
 import VueQArt from 'vue-qart';
 
 export default {
@@ -580,7 +578,7 @@ export default {
 </script>
 ```
 
-```app/javascript/packs/components/product/Create.vue
+```app/javascript/packs/components/products/Create.vue
 <template>
     <div class="container">
         <product-form></product-form>
@@ -597,7 +595,7 @@ export default {
 </script>
 ```
 
-```app/javascript/packs/components/product/Edit.vue
+```app/javascript/packs/components/products/Edit.vue
 <template>
     <div class="container">
         <product-form></product-form>
@@ -614,7 +612,7 @@ export default {
 </script>
 ```
 
-```app/javascript/packs/components/product/Form.vue
+```app/javascript/packs/components/products/Form.vue
 <template>
     <div class="container">
         <form>
@@ -641,7 +639,6 @@ export default {
 
 <script>
 import axios from 'axios';
-import $ from 'jquery'
 import { VueEditor, Quill } from 'vue2-editor';
 import { ImageDrop } from "quill-image-drop-module";
 import { ImageResize } from "quill-image-resize-module";
