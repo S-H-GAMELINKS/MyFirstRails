@@ -854,7 +854,6 @@ gem 'payjp'
 # Using Dotenv Rails
 gem 'dotenv-rails'
 
-
 # Using Gon
 gem 'gon'
 ```
