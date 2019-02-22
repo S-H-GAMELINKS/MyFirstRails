@@ -838,7 +838,14 @@ end
 
 今回のQR決済では、クレジットカードを登録し、そのカードに対してのトークンを生成し決済を行います
 
-まず、QRコードの読込とクレジットカードのトークン作成画面を作ります
+まず、必要なライブラリを`yarn`でインストールします
+
+```shell
+yarn add vue-payjp-checkout
+yarn add vue-qrcode-reader
+```
+
+次に、QRコードの読込とクレジットカードのトークン作成画面を作ります
 
 `app/javascript/packs/components/web/Payment.vue`を以下のように作成します
 
@@ -863,7 +870,6 @@ end
 import PayjpCheckout from 'vue-payjp-checkout';
 import { QrcodeReader } from 'vue-qrcode-reader';
 import axios from 'axios';
-import $ from 'jquery'
 
 export default{
     data: function() {
