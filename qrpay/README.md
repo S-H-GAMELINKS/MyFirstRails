@@ -427,7 +427,7 @@ const app = new Vue({
 Rails.application.routes.draw do
   root 'web#index'
   get '/about', to: 'web#index'
-  get '/category', to: 'web#index'
+  get '/contact', to: 'web#index'
   namespace :api, format: 'json' do
     resources :products
   end
@@ -942,7 +942,7 @@ class Api::PaymentsController < ApplicationController
 Rails.application.routes.draw do
   root 'web#index'
   get '/about', to: 'web#index'
-  get '/category', to: 'web#index'
+  get '/contact', to: 'web#index'
   namespace :api, format: 'json' do
     resources :products
     post '/payments' => 'payments#create'
