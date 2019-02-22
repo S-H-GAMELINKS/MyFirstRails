@@ -471,7 +471,7 @@ yarn add axios
 yarn add vue-qart
 yarn add vue2-editor
 yarn add quill-image-drop-module
-yarn add quill-image-resize-module
+yarn add quill-image-resize-module@1.0.0
 ```
 
 次に、`app/javascript/packs/components/products`ディレクトリ以下に
