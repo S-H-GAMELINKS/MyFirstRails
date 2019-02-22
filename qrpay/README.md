@@ -243,7 +243,7 @@ const app = new Vue({
 その後、`app/controllers/api/products_controller.rb`と`config/routes.rb`を以下のように修正します
 
 ```ruby:app/controllers/api/products_controller.rb
-class Api::ProductsController < ApplicationController
+class Api::ProductsController < ActionController::API
     before_action :set_product, only: [:show, :edit, :update, :destroy]
 
     # GET /api/products
