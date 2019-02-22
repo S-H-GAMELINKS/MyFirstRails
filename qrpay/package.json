@@ -13,6 +13,7 @@
     "style-loader": "^0.23.1",
     "vue": "^2.6.6",
     "vue-loader": "14.2.2",
+    "vue-payjp-checkout": "^0.0.1-alpha.4",
     "vue-qart": "^2.2.0",
     "vue-router": "^3.0.2",
     "vue-template-compiler": "^2.6.6",
