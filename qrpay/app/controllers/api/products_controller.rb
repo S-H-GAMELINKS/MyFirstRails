@@ -1,53 +1,66 @@
 class Api::ProductsController < ApplicationController
-  before_action :set_api_product, only: [:show, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /api/products
   # GET /api/products.json
   def index
-    @api_products = Api::Product.all
+      @products = Product.all
+      render json: @products
   end
 
   # GET /api/products/1
   # GET /api/products/1.json
   def show
+      render json: @product
+  end
+
+  # GET /api/products/new
+  def new
+      @product = Product.new
+      render json: @product
+  end
+
+  # GET /api/products/1/edit
+  def edit
+      render json: @product
   end
 
   # POST /api/products
   # POST /api/products.json
   def create
-    @api_product = Api::Product.new(api_product_params)
-
-    if @api_product.save
-      render :show, status: :created, location: @api_product
+    @product = Product.new(product_params)
+    
+    if @product.save
+      render json: @product
     else
-      render json: @api_product.errors, status: :unprocessable_entity
+      render json: @product.errors
     end
   end
 
   # PATCH/PUT /api/products/1
   # PATCH/PUT /api/products/1.json
   def update
-    if @api_product.update(api_product_params)
-      render :show, status: :ok, location: @api_product
+    if @product.update(product_params)
+      render json: @product
     else
-      render json: @api_product.errors, status: :unprocessable_entity
+      render json: @product.errors
     end
   end
 
   # DELETE /api/products/1
   # DELETE /api/products/1.json
   def destroy
-    @api_product.destroy
+    render json: @product.destroy
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_api_product
-      @api_product = Api::Product.find(params[:id])
+    def set_product
+      @product = Product.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def api_product_params
-      params.require(:api_product).permit(:name, :content, :price)
+    def product_params
+      params.require(:product).permit(:name, :content, :price)
     end
 end
