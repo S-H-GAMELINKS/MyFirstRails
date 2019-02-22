@@ -20,7 +20,7 @@ export default {
             price: "",
             config: {
                 value: "",
-                imagePath: "",
+                imagePath: "../../../../assets/images/qr.png",
                 filter: "color",
             }
         }
