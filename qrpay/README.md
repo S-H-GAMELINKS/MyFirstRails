@@ -853,7 +853,22 @@ gem 'payjp'
 
 # Using Dotenv Rails
 gem 'dotenv-rails'
+
+
+# Using Gon
+gem 'gon'
 ```
+
+その後、`.env`を以下のように作成します
+
+```.env
+# Usng Pay.jp API Key
+PAYJP_PUBLIC_KEY=
+PAYJP_SECRET_KEY=
+PAYJP_CLIENT_ID=
+```
+
+`PAY.jp`のキーなどは[こちら](https://qiita.com/Sa2Knight/items/baefe2a49cefc9f03af6)を参考にテスト用のものを取得します
 
 次に、QRコードの読込とクレジットカードのトークン作成画面を作ります
 
