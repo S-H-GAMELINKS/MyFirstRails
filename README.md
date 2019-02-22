@@ -47,3 +47,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [Mastodonアカウントでのログイン機能！](./mastodon_login/README.md)
 
 - [動画配信サイトの作成！](./railstube/README.md)
+
+- [Rails/Vue.jsでのQR決済アプリ！](./qrpay/README.md)

@@ -1,0 +1,27 @@
+{
+  "name": "qrpay",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "axios": "^0.18.0",
+    "babel-preset-es2015": "^6.24.1",
+    "bootstrap": "^4.3.1",
+    "css-loader": "^2.1.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.7",
+    "quill-image-drop-module": "^1.0.3",
+    "quill-image-resize-module": "1.0.0",
+    "style-loader": "^0.23.1",
+    "vue": "^2.6.6",
+    "vue-loader": "14.2.2",
+    "vue-payjp-checkout": "^0.0.1-alpha.4",
+    "vue-qart": "^2.2.0",
+    "vue-qrcode-reader": "^1.4.0",
+    "vue-router": "^3.0.2",
+    "vue-template-compiler": "^2.6.6",
+    "vue2-editor": "^2.6.6"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
+}
