@@ -465,6 +465,15 @@ end
 yarn add axios
 ```
 
+また、QR決済や商品作成時のエディタなどで使用するライブラリを追加します
+
+```shell
+yarn add vue-qart
+yarn add vue2-editor
+yarn add quill-image-drop-module
+yarn add quill-image-resize-module
+```
+
 次に、`app/javascript/packs/components/products`ディレクトリ以下に
 `app/javascript/packs/components/products/Index.vue`、`app/javascript/packs/components/products/Show.vue`、
 `app/javascript/packs/components/products/Create.vue`、`app/javascript/packs/components/products/Edit.vue`、
@@ -587,6 +596,7 @@ export default {
 
 <script>
 import Form from './Form.vue';
+
 export default {
     components: {
         'product-form': Form
@@ -604,6 +614,7 @@ export default {
 
 <script>
 import Form from './Form.vue';
+
 export default {
     components: {
         'product-form': Form
