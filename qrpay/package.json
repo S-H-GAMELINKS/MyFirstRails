@@ -15,6 +15,7 @@
     "vue-loader": "14.2.2",
     "vue-payjp-checkout": "^0.0.1-alpha.4",
     "vue-qart": "^2.2.0",
+    "vue-qrcode-reader": "^1.4.0",
     "vue-router": "^3.0.2",
     "vue-template-compiler": "^2.6.6",
     "vue2-editor": "^2.6.6"
