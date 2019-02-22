@@ -870,6 +870,18 @@ PAYJP_CLIENT_ID=
 
 `PAY.jp`のキーなどは[こちら](https://qiita.com/Sa2Knight/items/baefe2a49cefc9f03af6)を参考にテスト用のものを取得します
 
+そして`app/controllers/web_controller.rb`を以下のように編集します
+
+```ruby:app/controllers/web_controller.rb
+class WebController < ApplicationController
+  def index
+    gon.payjp_public_key = ENV['PAYJP_PUBLIC_KEY']
+    gon.payjp_client_id = ENV['PAYJP_SECRET_KEY']
+  end
+end
+```
+
+
 次に、QRコードの読込とクレジットカードのトークン作成画面を作ります
 
 `app/javascript/packs/components/web/Payment.vue`を以下のように作成します
