@@ -326,6 +326,29 @@ end
 
 また、APIとして作成しているので`View`ファイルなどは作成されません
 
+次に`db/migrate/2019XXXXXXXXXX_create_api_products.rb`を以下のように修正します
+
+```ruby:
+class CreateApiProducts < ActiveRecord::Migration[5.2]
+  def change
+    create_table :products do |t|
+      t.string :name
+      t.text :content
+      t.integer :price
+
+      t.timestamps
+    end
+  end
+end
+```
+
+その後、`app/models/api/product.rb`を`app/models`ディレクトリ直下に移動し、以下のように修正します
+
+```ruby:app/models
+class Product < ApplicationRecord
+end
+```
+
 ### vue-routerの導入
 
 まず、`yarn add vue-router`で[`vue-router`](https://github.com/vuejs/vue-router)をインストールします
