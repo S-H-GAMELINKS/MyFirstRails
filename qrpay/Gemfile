@@ -38,7 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'payjp'
 
 # Using Dotenv Rails
-gem 'dotenv-rails'
+gem 'dotenv-rails', '~> 2.2.1'
 
 # Using Gon
 gem 'gon'

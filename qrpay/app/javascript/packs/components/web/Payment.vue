@@ -38,15 +38,8 @@ export default{
             console.error(e);
         },
         setCreditToken: function(token) {
-            axios.defaults.headers['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
-            axios.defaults.headers['content-type'] = 'application/json';
-            axios.post('/api/users/set_token', {user: {token: token}}).then((response) => {
-                console.log(response);
-                alert("Success!");
-            }, (error) => {
-                console.log(error);
-                alert("Failed!");
-            })
+            this.token = token
+            console.log(token)
         },
         async onInit (promise) {
             try {

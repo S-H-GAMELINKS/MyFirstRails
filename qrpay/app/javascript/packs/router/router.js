@@ -18,7 +18,7 @@ export default new VueRouter({
     { path: '/', component: Index },
     { path: '/about', component: About },
     { path: '/contact', component: Contact },
-    { path: '/payment', component: Payment },
+    { path: '/payments', component: Payment },
     { path: '/products', component: ProductsIndex },
     { path: '/products/new', component: ProductsCreate },
     { path: '/products/:id', component: ProductsShow, name: 'products_show'},

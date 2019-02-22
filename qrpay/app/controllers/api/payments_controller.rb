@@ -1,4 +1,4 @@
-class Api::PaymentsController < ApplicationController
+class Api::PaymentsController < ActionController::API
 
     # POST /api/payments
     # POST /api/payments.json
