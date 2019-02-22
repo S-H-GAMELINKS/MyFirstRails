@@ -13,7 +13,8 @@
     "vue-loader": "14.2.2",
     "vue-qart": "^2.2.0",
     "vue-router": "^3.0.2",
-    "vue-template-compiler": "^2.6.6"
+    "vue-template-compiler": "^2.6.6",
+    "vue2-editor": "^2.6.6"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
