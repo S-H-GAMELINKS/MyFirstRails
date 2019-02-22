@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Index from '../components/web/Index.vue';
 import About from '../components/web/About.vue';
 import Contact from '../components/web/Contact.vue';
+import Payment from '../components/web/Payment.vue';
 
 import ProductsIndex from '../components/products/Index.vue';
 import ProductsCreate from '../components/products/Create.vue';
@@ -17,6 +18,7 @@ export default new VueRouter({
     { path: '/', component: Index },
     { path: '/about', component: About },
     { path: '/contact', component: Contact },
+    { path: '/payment', component: Payment },
     { path: '/products', component: ProductsIndex },
     { path: '/products/new', component: ProductsCreate },
     { path: '/products/:id', component: ProductsShow, name: 'products_show'},
