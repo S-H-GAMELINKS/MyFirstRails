@@ -845,17 +845,60 @@ yarn add vue-payjp-checkout
 yarn add vue-qrcode-reader
 ```
 
+`.babelrc`を以下のように変更します
+
+```
+{
+  "presets": [
+    ["env", {
+      "modules": false,
+      "targets": {
+        "node": "current"
+      },
+      "useBuiltIns": true
+    }]
+  ],
+
+  "plugins": [
+    "syntax-dynamic-import",
+    "transform-object-rest-spread",
+    ["transform-class-properties", { "spec": true }]
+  ]
+}
+```
+
 その後、`PAY.jp`で決済するための`gem`を追加します
 
 ```ruby:Gemfile
-# Using Pay.jp for Ruby
 gem 'payjp'
-
-# Using Dotenv Rails
-gem 'dotenv-rails'
-
-# Using Gon
+gem 'dotenv-rails', '~> 2.2.1'
 gem 'gon'
+```
+
+`bundle install`で`gem`を追加します
+
+```shell
+bundle install
+```
+
+`bundle install`後、`app/views/layouts/application.html.erb`を以下のように編集します
+
+```erb:app/views/layouts/application.html.erb
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Qrpay</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= include_gon %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
 ```
 
 その後、`.env`を以下のように作成します
@@ -879,7 +922,6 @@ class WebController < ApplicationController
   end
 end
 ```
-
 
 次に、QRコードの読込とクレジットカードのトークン作成画面を作ります
 
@@ -926,15 +968,7 @@ export default{
             console.error(e);
         },
         setCreditToken: function(token) {
-            axios.defaults.headers['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
-            axios.defaults.headers['content-type'] = 'application/json';
-            axios.post('/api/users/set_token', {user: {token: token}}).then((response) => {
-                console.log(response);
-                alert("Success!");
-            }, (error) => {
-                console.log(error);
-                alert("Failed!");
-            })
+            this.token = token
         },
         async onInit (promise) {
             try {
@@ -976,7 +1010,7 @@ export default{
 あとは決済用のPIとして`app/controllers/api/payments_controller.rb`を作成します
 
 ```ruby:app/controllers/api/payments_controller.rb
-class Api::PaymentsController < ApplicationController
+class Api::PaymentsController < ActionController::API
 
     # POST /api/payments
     # POST /api/payments.json
@@ -1038,6 +1072,38 @@ end
         </nav>
     </div>    
 </template>
+```
+
+最後に、`app/javascript/packs/router/router.js`で`app/javascript/packs/components/web/Payment.vue`を使用します
+
+```js:app/javascript/packs/router/router.js
+import Vue from 'vue/dist/vue.esm.js';
+import VueRouter from 'vue-router';
+import Index from '../components/web/Index.vue';
+import About from '../components/web/About.vue';
+import Contact from '../components/web/Contact.vue';
+import Payment from '../components/web/Payment.vue';
+
+import ProductsIndex from '../components/products/Index.vue';
+import ProductsCreate from '../components/products/Create.vue';
+import ProductsShow from '../components/products/Show.vue';
+import ProductsEdit from '../components/products/Edit.vue';
+
+Vue.use(VueRouter)
+
+export default new VueRouter({
+  mode: 'history',
+  routes: [
+    { path: '/', component: Index },
+    { path: '/about', component: About },
+    { path: '/contact', component: Contact },
+    { path: '/payments', component: Payment },
+    { path: '/products', component: ProductsIndex },
+    { path: '/products/new', component: ProductsCreate },
+    { path: '/products/:id', component: ProductsShow, name: 'products_show'},
+    { path: '/products/:id/edit', component: ProductsEdit, name: 'products_edits'},
+  ],
+})
 ```
 
 これでクレジットカードをフォームから登録し、QRコードを読み込めば支払いができます！
