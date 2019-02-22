@@ -1,4 +1,4 @@
-class Api::ProductsController < ApplicationController
+class Api::ProductsController < ActionController::API
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /api/products
