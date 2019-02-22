@@ -9,7 +9,7 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.14.7",
     "quill-image-drop-module": "^1.0.3",
-    "quill-image-resize-module": "^3.0.0",
+    "quill-image-resize-module": "1.0.0",
     "style-loader": "^0.23.1",
     "vue": "^2.6.6",
     "vue-loader": "14.2.2",
