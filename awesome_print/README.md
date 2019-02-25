@@ -20,6 +20,20 @@ rails new awesome_print
 cd awesome_print
 ```
 
+### SQLite3のバージョン修正
+
+先ほどのrails newでsqlite3のインストールがエラーになっている場合は、以下のようにバージョンを指定してください
+
+```ruby:Gemfile
+gem 'sqlite3', '1.3.13'
+```
+
+その後、bundle installを実行します
+
+```shell
+bundle install
+```
+
 ### ScaffoldでCRUDを作成
 
 [`AwesomePrint`](https://github.com/awesome-print/awesome_print)でコンソールログが見やすくなるか確認するために`Post`のCRUDを作成します
