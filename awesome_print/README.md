@@ -3,7 +3,7 @@
 
 Railsにこれから初めて触れる方を対象にしたチュートリアルです
 
-Railsでのコンソールログを見やすくしてくれる[`AwesomePrint`](https://github.com/awesome-print/awesome_print)を導入するチュートリアルです
+Railsコンソールでログを見やすくしてくれる[`AwesomePrint`](https://github.com/awesome-print/awesome_print)を導入するチュートリアルです
 
 ## チュートリアル
 ### Railsのひな型を作る
@@ -75,7 +75,7 @@ require "awesome_print"
 AwesomePrint.irb!
 ```
 
-この後、`rails s`で`localhost:3000`にアクセスします
+この後、`rails c`でコンソールを立ち上げます
 
 後は、適当に新しい`Post`などを作成してください
 
