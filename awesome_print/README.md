@@ -72,7 +72,7 @@ gem 'awesome_print'
 
 ```ruby:.irbrc
 require "awesome_print"
-AwesomePrint.pry!
+AwesomePrint.irb!
 ```
 
 この後、`rails s`で`localhost:3000`にアクセスします
