@@ -49,3 +49,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [動画配信サイトの作成！](./railstube/README.md)
 
 - [Rails/Vue.jsでのQR決済アプリ！](./qrpay/README.md)
+
+- [QRコード作成！](./qr_gene/README.md)
