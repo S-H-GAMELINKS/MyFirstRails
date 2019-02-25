@@ -47,6 +47,7 @@ GEM
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    awesome_print (1.8.0)
     bindex (0.5.0)
     bootsnap (1.4.0)
       msgpack (~> 1.0)
@@ -187,6 +188,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  awesome_print
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
