@@ -174,7 +174,7 @@ end
   <%= @product.price %>
 </p>
 
-<%= image_tag @qr_code %>
+<%= @qr_code %>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
