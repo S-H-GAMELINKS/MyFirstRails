@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @qr_code = QRCode::QRCode.new(@product.price.to_s).as_svg
   end
 
   # GET /products/new
