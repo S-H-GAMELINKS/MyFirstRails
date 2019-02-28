@@ -145,7 +145,7 @@ MESSAGEING_SENDER_ID=<FireBaseで取得したmessagingSenderId>
 それから`Gemfile`に以下の`gem`を追加します
 
 ```ruby:Gemfile
-gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
+gem 'dotenv-rails', '>= 2.1.1'
 gem 'gon'
 ```
 
@@ -175,12 +175,12 @@ import { Controller } from "stimulus"
 import FireBase from 'firebase'
 
 const firebase = FireBase.initializeApp({
-    apiKey: process.env.API_KEY,
-    authDomain: process.env.AUTH_DOMAIN,
-    databaseURL: process.env.DB_URL,
-    projectId: process.env.PROJECT_ID,
-    storageBucket: process.env.STORAGE_BUCKET,
-    messagingSenderId: process.env.MESSAGEING_SENDER_ID
+    apiKey: String(gon.api_key),
+    authDomain: String(gon.auth_domain),
+    databaseURL: String(gon.database_url),
+    projectId: String(gon.project_id),
+    storageBucket: String(gon.storage_bucket),
+    messagingSenderId: String(gon.message_senderid)
 });
 
 const database = firebase.database();
@@ -223,7 +223,26 @@ export default class extends Controller {
 最後に、`app/views/show.html.erb`を以下のように変更してチャット機能を使用できるようにします
 
 ```erb:app/views/show.html.erb
+<p id="notice"><%= notice %></p>
 
+<%= include_gon %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @room.title %>
+</p>
+
+<div data-controller="chat">
+  <div data-target="chat.chats"></div>
+
+  <input data-target="chat.content">
+  <button data-action="click->chat#submit" data-action="click->chat#update">submit</button>
+</div>
+
+<%= javascript_pack_tag 'application' %>
+
+<%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to 'Back', rooms_path %>
 ```
 
 これでRails/Stimulusでのリアルタイムチャットは完成です！

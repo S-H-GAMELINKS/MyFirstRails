@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= include_gon %>
+
 <p>
   <strong>Title:</strong>
   <%= @room.title %>
@@ -11,6 +13,8 @@
   <input data-target="chat.content">
   <button data-action="click->chat#submit" data-action="click->chat#update">submit</button>
 </div>
+
+<%= javascript_pack_tag 'application' %>
 
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>

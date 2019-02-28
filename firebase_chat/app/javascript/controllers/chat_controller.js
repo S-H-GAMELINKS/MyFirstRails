@@ -2,12 +2,12 @@ import { Controller } from "stimulus"
 import FireBase from 'firebase'
 
 const firebase = FireBase.initializeApp({
-    apiKey: process.env.API_KEY,
-    authDomain: process.env.AUTH_DOMAIN,
-    databaseURL: process.env.DB_URL,
-    projectId: process.env.PROJECT_ID,
-    storageBucket: process.env.STORAGE_BUCKET,
-    messagingSenderId: process.env.MESSAGEING_SENDER_ID
+    apiKey: String(gon.api_key),
+    authDomain: String(gon.auth_domain),
+    databaseURL: String(gon.database_url),
+    projectId: String(gon.project_id),
+    storageBucket: String(gon.storage_bucket),
+    messagingSenderId: String(gon.message_senderid)
 });
 
 const database = firebase.database();
