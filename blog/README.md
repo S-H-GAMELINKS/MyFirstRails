@@ -206,9 +206,9 @@ bundle install
 //= require_tree .
 ```
 
-次に、`app/assets/javascripts/application.css`を`app/assets/javascripts/application.scss`にリネームして以下のように変更します
+次に、`app/assets/stylesheets/application.css`を`app/assets/stylesheets/application.scss`にリネームして以下のように変更します
 
-```scss:app/assets/javascripts/application.scss
+```scss:app/assets/stylesheets/application.scss
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
