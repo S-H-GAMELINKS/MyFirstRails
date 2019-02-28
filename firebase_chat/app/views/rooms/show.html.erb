@@ -8,7 +8,8 @@
 <div data-controller="chat">
   <div data-target="chat.chats"></div>
 
-  <input data-target="chat.content" data-action="click->chat#submit" data-action="click->chat#update">
+  <input data-target="chat.content">
+  <button data-action="click->chat#submit" data-action="click->chat#update">submit</button>
 </div>
 
 <%= link_to 'Edit', edit_room_path(@room) %> |
