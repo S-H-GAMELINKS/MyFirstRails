@@ -51,3 +51,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [Rails/Vue.jsでのQR決済アプリ！](./qrpay/README.md)
 
 - [QRコード作成！](./qr_gene/README.md)
+
+- [FireBaseでのリアルタイムチャット!](./firebase_chat/README.md)
