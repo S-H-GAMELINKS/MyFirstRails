@@ -142,6 +142,26 @@ STORAGE_BUCKET=<FireBaseで取得したstorageBucket>
 MESSAGEING_SENDER_ID=<FireBaseで取得したmessagingSenderId>
 ```
 
+それから`Gemfile`に以下の`gem`を追加します
+
+```ruby:Gemfile
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
+gem 'gon'
+```
+
+最後に、`app/controllers/rooms_controller.rb`の`show`アクションを以下のようにします
+
+```ruby:app/controllers/rooms_controller.rb
+  def show
+    gon.api_key = ENV['API_KEY']
+    gon.auth_domain = ENV['AUTH_DOMAIN']
+    gon.database_url = ENV['DB_URL']
+    gon.project_id = ENV['PROJECT_ID']
+    gon.storage_bucket = ENV['STORAGE_BUCKET']
+    gon.message_senderid = ENV['MESSAGEING_SENDER_ID']
+  end
+```
+
 `yarn add firebase`を実行します
 
 ```shell
