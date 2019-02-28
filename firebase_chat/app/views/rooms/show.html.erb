@@ -5,5 +5,11 @@
   <%= @room.title %>
 </p>
 
+<div data-controller="chat">
+  <div data-target="chat.chats"></div>
+
+  <input data-target="chat.content" data-action="click->chat#submit" data-action="click->chat#update">
+</div>
+
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>
