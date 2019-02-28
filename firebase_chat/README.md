@@ -142,6 +142,12 @@ STORAGE_BUCKET=<FireBaseで取得したstorageBucket>
 MESSAGEING_SENDER_ID=<FireBaseで取得したmessagingSenderId>
 ```
 
+`yarn add firebase`を実行します
+
+```shell
+yarn add firebase
+```
+
 あとは、`app/javascript/packs/controllers/chat_controller.js`を作成します
 
 ```js:app/javascript/packs/controllers/chat_controller.js
