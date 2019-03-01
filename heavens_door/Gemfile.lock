@@ -75,6 +75,7 @@ GEM
     ffi (1.10.0-x64-mingw32)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    heavens_door (0.2.2)
     i18n (1.5.3)
       concurrent-ruby (~> 1.0)
     jbuilder (2.8.0)
@@ -186,6 +187,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   coffee-rails (~> 4.2)
   duktape
+  heavens_door
   jbuilder (~> 2.5)
   puma (~> 3.11)
   rails (~> 5.2.2)
