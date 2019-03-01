@@ -34,20 +34,6 @@ gem 'sqlite3', '1.3.13'
 bundle install
 ```
 
-### capybaraの導入
-
-次に、[`capybara`](https://github.com/teamcapybara/capybara)を導入します
-
-```ruby:Gemfile
-gem 'capybara', '>= 2.15', group: :development
-```
-
-そのあと、`bundle install`を実行します
-
-```shell
-bundle install
-```
-
 ### テスト用CRUD作成
 
 テストするためのCRUDを作成します
