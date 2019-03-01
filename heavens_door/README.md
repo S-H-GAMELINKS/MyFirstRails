@@ -48,6 +48,8 @@ rails g scaffold post title content
 rails db:migrate RAILS_ENV=test
 ```
 
+`rails db:migrate RAILS_ENV=test`でマイグレーションが実行できない場合は、`Gemfile`の`gem 'chromedriver-helper'`をコメントアウトします
+
 ### heavens_doorの導入
 
 `heavens_door`を導入したいと思います！
