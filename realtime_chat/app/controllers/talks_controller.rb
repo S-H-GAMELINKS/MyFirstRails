@@ -3,11 +3,11 @@ class TalksController < ActionController::API
 
     def index
         @talks = @room.talks.all
-        render json: @talks.map!{|talk| "<p>#{talk.content}</p>"}.inject(:+)
+        render json: @talks.map{|talk| "<p>#{talk.content}</p>"}.inject(:+)
     end
 
     def create
-        @room.comments.create! talks_params
+        @room.talks.create! talks_params
         redirect_to @room
     end
 

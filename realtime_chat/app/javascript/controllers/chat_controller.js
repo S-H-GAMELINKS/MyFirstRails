@@ -15,7 +15,7 @@ export default class extends Controller {
     }
 
     load() {
-        axios.get(`${location.pathname}`).then((res) => {
+        axios.get(`${location.pathname}/talks`).then((res) => {
             this.talksTarget.innerHTML = res.data;
         }, (error) => {
             console.log(error);
@@ -23,7 +23,7 @@ export default class extends Controller {
     }
 
     submit() {
-        axios.post(`${location.pathname}`, { talk: { content: `${this.contentTarget.value}` }}).then((res) => {
+        axios.post(`${location.pathname}/talks`, { talk: { content: `${this.contentTarget.value}` }}).then((res) => {
             this.contentTarget.value = "";
             console.log(res);
         }, (error) => {
