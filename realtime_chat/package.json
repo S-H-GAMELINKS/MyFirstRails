@@ -1,0 +1,12 @@
+{
+  "name": "realtime_chat",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "axios": "^0.18.0",
+    "stimulus": "^1.1.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
+}
