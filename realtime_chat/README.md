@@ -26,6 +26,22 @@ Vue、React、Angular、Elm、Stimulusを使用することができます
 cd realtime_chat
 ```
 
+### SQLite3のバージョンを修正
+
+SQLite3のバージョン修正
+
+先ほどの`rails new`で`sqlite3`のインストールがエラーになっている場合は、以下のようにバージョンを指定してください
+
+```ruby:Gemfile
+gem 'sqlite3', '1.3.13'
+```
+
+その後、`bundle install`を実行します
+
+```shell
+bundle install
+```
+
 ### Foremanを使う
 
 [`Webpacker`](https://github.com/rails/webpacker)を使う場合、`ruby ./bin/webpack-dev-server`というコマンドを実行しつつ、`rails s`でローカルサーバーを起動する必要があります
