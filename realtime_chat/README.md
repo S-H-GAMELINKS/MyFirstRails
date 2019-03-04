@@ -224,7 +224,7 @@ class TalksController < ActionController::API
 
     def index
         @talks = @room.talks.all
-        render
+        render json: @talks.map!{|talk| "<p>#{talk.content}</p>"}.inject(:+)
     end
 
     def create
