@@ -19,6 +19,19 @@ rails new activeadmin
 ```shell
 cd activeadmin
 ```
+### SQLite3のバージョン修正
+
+先ほどのrails newでsqlite3のインストールがエラーになっている場合は、以下のようにバージョンを指定してください
+
+```ruby:Gemfile
+gem 'sqlite3', '1.3.13'
+```
+
+その後、bundle installを実行します
+
+```shell
+bundle install
+```
 
 ### Scaffoldで管理するモデルとCRUDを作成
 
