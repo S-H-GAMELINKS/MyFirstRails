@@ -79,6 +79,7 @@ rails db:seed
 
 ```shell
 rails generate active_admin:resource post
+rails db:migrate
 ```
 
 
