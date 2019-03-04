@@ -67,13 +67,20 @@ gem 'pundit'
 bundle install
 ```
 
-あとは、以下のコマンドを実行するだけです
+以下のコマンドを実行し、`activeadmin`をインストールします
 
 ```shell
 rails g active_admin:install
 rails db:migrate
 rails db:seed
 ```
+
+あとは、`rails generate active_admin:resource post`を実行します
+
+```shell
+rails generate active_admin:resource post
+```
+
 
 最後に、`localhost:3000/admin`にアクセスします
 
