@@ -1,24 +1,78 @@
-# README
+# Active Admin での管理画面作成！
+## 概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Railsにこれから初めて触れる方を対象にしたチュートリアルです
 
-Things you may want to cover:
+[activeadmin](https://github.com/activeadmin/activeadmin)を使用した管理画面作成チュートリアルになります
 
-* Ruby version
+## チュートリアル
+### Railsのひな型を作る
 
-* System dependencies
+まず、`rails new`を実行し、Railsアプリのひな型を作成します
 
-* Configuration
+```shell
+rails new activeadmin
+```
 
-* Database creation
+次に、作成したRailsアプリのディレクトリへと移動します
 
-* Database initialization
+```shell
+cd activeadmin
+```
 
-* How to run the test suite
+### Scaffoldで管理するモデルとCRUDを作成
 
-* Services (job queues, cache servers, search engines, etc.)
+`rails g scaffold`を使用し、`Active Admin`で管理する`Model`などを作成します
 
-* Deployment instructions
+```shell
+rails g scaffold post title:string content:text
+```
 
-* ...
+その後、`rails db:migrate`でマイグレーションを行います
+
+```shell
+rails db:migrate
+```
+
+### ActiveAdminの導入
+
+`Gemfile`に以下の`gem`を追加していきます
+
+```ruby:Gemfile
+gem 'activeadmin'
+
+# Plus integrations with:
+gem 'devise'
+gem 'cancancan'
+gem 'draper'
+gem 'pundit'
+```
+
+その後、`bundle install`を実行します
+
+```shell
+bundle install
+```
+
+あとは、以下のコマンドを実行するだけです
+
+```shell
+rails g active_admin:install
+```
+
+最後に、`localhost:3000/admin`にアクセスします
+
+まず、`rails s`でローカルサーバを起動します
+
+```shell
+rails s
+```
+
+その後、`localhost:3000/admin`にアクセスして以下のアドレスとパスワードを入力します
+
+```
+- User: admin@example.com
+- Password: password
+```
+
+これで`ActiveAdmin`が使えるようになりました！
