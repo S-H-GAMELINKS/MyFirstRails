@@ -71,6 +71,8 @@ bundle install
 
 ```shell
 rails g active_admin:install
+rails db:migrate
+rails db:seed
 ```
 
 最後に、`localhost:3000/admin`にアクセスします
