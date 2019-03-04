@@ -164,6 +164,8 @@ end
         <button data-action="click->chat#submit">add</div>
     </div>
 
+<%= javascript_pack_tag 'application.js' %>
+
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>
 ```
