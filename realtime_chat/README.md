@@ -142,6 +142,8 @@ end
         <input data-target="chat.content">
         <button data-action="click->chat#submit">add</div>
     </div>
+
+<%= javascript_pack_tag 'application.js' %>
 ```
 
 このように変更します
