@@ -220,6 +220,12 @@ export default class extends Controller {
 }
 ```
 
+作成後、`yarn add axios`で`axios`を追加します
+
+```shell
+yarn add axios
+```
+
 最後に、`app/controllers/talks_controller.rb`を作成します
 
 ```ruby:app/controllers/talks_controller.rb
