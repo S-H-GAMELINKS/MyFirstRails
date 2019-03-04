@@ -57,3 +57,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [Heavens DoorでのUIテストを簡単追加！](./heavens_door/README.md)
 
 - [Rails/Stimulusでのリアルタイムチャット](./realtime_chat/README.md)
+
+- [ActiveAdminでの管理画面作成！](./activeadmin/README.md)
