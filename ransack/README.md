@@ -72,7 +72,7 @@ bundle install
 <%= search_form_for @search do |f| %>
   <div class="form-group">
     <%= f.label :content_cont, "Content" %>
-    <%= f.text_field :name_cont, class: "form-control" %>
+    <%= f.text_field :content_cont, class: "form-control" %>
   </div>
   <div class="actions"><%= f.submit "Search" %></div>
 <% end %>
