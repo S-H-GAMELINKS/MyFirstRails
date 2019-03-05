@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<%= search_form_for @search do |f| %>
+  <div class="form-group">
+    <%= f.label :content_cont, "Content" %>
+    <%= f.text_field :name_cont, class: "form-control" %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>
+
 <h1>Posts</h1>
 
 <table>
