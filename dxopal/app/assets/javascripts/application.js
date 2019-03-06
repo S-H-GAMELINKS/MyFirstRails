@@ -14,4 +14,6 @@
 //= require activestorage
 //= require turbolinks
 //= require ace-rails-ap
+//= require ace/theme-github
+//= require ace/mode-ruby
 //= require_tree .
