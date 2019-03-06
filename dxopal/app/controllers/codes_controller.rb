@@ -25,6 +25,7 @@ class CodesController < ApplicationController
   # POST /codes.json
   def create
     @code = Code.new(code_params)
+    @code.content = params[:content]
 
     respond_to do |format|
       if @code.save
@@ -41,6 +42,7 @@ class CodesController < ApplicationController
   # PATCH/PUT /codes/1.json
   def update
     respond_to do |format|
+      @code.content = params[:content]
       if @code.update(code_params)
         format.html { redirect_to @code, notice: 'Code was successfully updated.' }
         format.json { render :show, status: :ok, location: @code }
