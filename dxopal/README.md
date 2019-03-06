@@ -1,24 +1,35 @@
-# README
+# DXOpalの実行環境！
+## 概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Railsにこれから初めて触れる方を対象にしたチュートリアルです
 
-Things you may want to cover:
+[`DXOpal`](https://github.com/activerecord-hackery/ransack)を使用した`DXOpal`の実行環境構築チュートリアルになります
 
-* Ruby version
+## チュートリアル
+### Railsのひな型を作る
 
-* System dependencies
+まず、`rails new`を実行し、Railsアプリのひな型を作成します
 
-* Configuration
+```shell
+rails new dxopal
+```
 
-* Database creation
+次に、作成したRailsアプリのディレクトリへと移動します
 
-* Database initialization
+```shell
+cd dxopal
+```
 
-* How to run the test suite
+### SQLite3のバージョン修正
 
-* Services (job queues, cache servers, search engines, etc.)
+先ほどの`rails new`で`sqlite3`のインストールがエラーになっている場合は、以下のようにバージョンを指定してください
 
-* Deployment instructions
+```ruby:Gemfile
+gem 'sqlite3', '1.3.13'
+```
 
-* ...
+その後、`bundle install`を実行します
+
+```shell
+bundle install
+```
