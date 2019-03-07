@@ -47,3 +47,68 @@ rails g scaffold code title:string content:string
 ```shell
 rails db:migrate
 ```
+
+### ace-editorの導入
+
+[`ace-rails-ap`](https://github.com/codykrieger/ace-rails-ap)という`gem`を使い、Aceエディターを使用します
+
+まず`Gemfile`に必要な`gem`を追加します
+
+```ruby:Gemfile
+gem 'ace-rails-ap'
+gem 'jquery-rails'
+```
+
+その後、`bundle install`を実行します
+
+```shell
+bundle install
+```
+
+次に、`app/assets/javascripts/application.js`に以下の4行を追加します
+
+```js:app/assets/javascripts/application.js
+//= require jquery
+//= require ace-rails-ap
+//= require ace/theme-monokai
+//= require ace/mode-ruby
+```
+
+次に、`app/views/codes/_form.html.erb`でエディターを使用したいところを以下のようにします
+
+```erb:_form.html.erb
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: 'ruby_code' %>
+    <div id="editor" class="inner"></div>
+  </div>
+```
+
+その後、`app/assets/javascripts/codes.coffee`でエディターを表示し、その内容を`text_area`に格納できるようにします
+
+```coffee:app/assets/javascripts/codes.coffee
+$(document).on 'turbolinks:load', ->
+  if !($('#editor').length) then return false
+  editor = ace.edit('editor')
+  textarea = $('#ruby_code').hide()
+  editor.setTheme('ace/theme/monokai')
+  editor.getSession().setMode('ace/mode/ruby')
+  editor.getSession().setValue(textarea.val())
+  editor.getSession().on('change', -> 
+    textarea.val(editor.getSession().getValue()))
+```
+
+これでOKと行きたいところですが、このままだとエディターの高さがなく、エディターがブラウザ上で表示されません
+
+そこで、`CSS`の`.inner`を`app/assets/stylesheets/codes.scss`を以下のように変更します
+
+```scss:app/assets/stylesheets/codes.scss
+.inner {
+    height:300px;
+    padding-right:0;
+    padding-left: 0;
+    background-color: #ccc;
+  }
+```
+
+これでエディターを使用することができます！
