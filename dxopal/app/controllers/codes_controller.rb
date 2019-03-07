@@ -1,10 +1,14 @@
 class CodesController < ApplicationController
-  before_action :set_code, only: [:show, :edit, :update, :destroy]
+  before_action :set_code, only: [:code, :show, :edit, :update, :destroy]
 
   # GET /codes
   # GET /codes.json
   def index
     @codes = Code.all
+  end
+
+  def code
+    render json: @source.code
   end
 
   # GET /codes/1
