@@ -12,5 +12,9 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require jquery
+//= require ace-rails-ap
+//= require ace/theme-monokai
+//= require ace/mode-ruby
 //= require turbolinks
 //= require_tree .
