@@ -33,3 +33,17 @@ gem 'sqlite3', '1.3.13'
 ```shell
 bundle install
 ```
+
+### ScaffoldでCRUDのひな型作成
+
+`rails g scaffold`を使い、`DXOpal`のソースコードを管理する`Model`などを作成します
+
+```shell
+rails g scaffold code title:string content:string
+```
+
+その後、`rails db:migrate`を実行します
+
+```shell
+rails db:migrate
+```
