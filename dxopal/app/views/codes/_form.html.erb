@@ -18,29 +18,11 @@
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content, name: 'content' %>
-    <div class="row">
-      <div class="col-sm-12">
-        <div id="content" class="inner jumbotron"></div>
-      </div>
-    </div>
+    <%= form.text_area :content, id: 'ruby_code' %>
+    <div id="editor" class="inner"></div>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
-
-<script type="text/javascript">
-
-var editor = ace.edit("content");
-
-var textarea = $('textarea[name="content"]').hide();
-
-editor.getSession().setValue(textarea.val());
-
-editor.getSession().on('change', function(){
-  textarea.val(editor.getSession().getValue());
-});
-
-</script>
