@@ -3,7 +3,7 @@
 
 Railsにこれから初めて触れる方を対象にしたチュートリアルです
 
-[`DXOpal`](https://github.com/activerecord-hackery/ransack)を使用した`DXOpal`の実行環境構築チュートリアルになります
+[`DXOpal`](https://github.com/yhara/dxopal)を使用した`DXOpal`の実行環境構築チュートリアルになります
 
 ## チュートリアル
 ### Railsのひな型を作る
@@ -112,3 +112,56 @@ $(document).on 'turbolinks:load', ->
 ```
 
 これでエディターを使用することができます！
+
+### DXOpalの導入
+
+さて、最後に[`DXOpal`](https://github.com/yhara/dxopal)を導入します
+
+[`こちら`](https://github.com/yhara/dxopal/blob/master/build/dxopal.min.js)から`dxopal.min.js`をダウンロードします
+
+ダウンロードした`dxopal.min.js`を`app/assets/javascripts`フォルダ内に移動します
+
+その後、`app/assets/javascripts/application.js`に以下の一行を追加します
+
+```js:app/assets/javascripts/application.js
+//= require dxopal.min
+```
+
+その後、`Gemfile`に以下の二行を追加し、`bundle update`と`bundle install`を実行します
+
+```ruby:Gemfile
+gem 'dxopal'
+gem 'thor', '>= 0.19.1'
+```
+
+```shell
+bundle update
+bundle install
+```
+
+次に、`app/views/codes/show.html.erb`に以下の内容を追加します
+
+```erb:app/views/codes/show.html.erb
+<script type="text/ruby">
+  require 'native'
+  DXOpal.dump_error{ require_remote String($$.location.pathname) + "/code" }
+</script>
+
+<canvas id="dxopal-canvas"></canvas>
+<div id="dxopal-errors"></div>
+<input type='button' id='pause' value='Pause/Resume'>
+```
+
+最後に、`config/routes.rb`に`/codes/:id/code`へのルーティングを追加し、`app/controllers/codes_controller.rb`に`code`アクションを作成します
+
+```ruby:config/routes.rb
+get '/codes/:id/code', to: 'codes#code'
+```
+
+```ruby:app/controllers/codes_controller.rb
+def code
+    render json: @code.content
+end
+```
+
+これで`DXOpal`でのオンライン実行環境がRailsで構築できました！
