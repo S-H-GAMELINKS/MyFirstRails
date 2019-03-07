@@ -1,3 +1,6 @@
+<script src="https://cdn.opalrb.com/opal/current/opal.js" onload="Opal.load('opal')"></script>
+<script src="https://cdn.opalrb.com/opal/current/opal-parser.js" onload="Opal.load('opal-parser')"></script>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -9,6 +12,13 @@
   <strong>Content:</strong>
   <%= @code.content %>
 </p>
+
+<p>実行結果</p>
+<div class="exec"></div>
+
+<script type="text/ruby">
+  <%= sanitize @code.content %>
+</script>
 
 <%= link_to 'Edit', edit_code_path(@code) %> |
 <%= link_to 'Back', codes_path %>

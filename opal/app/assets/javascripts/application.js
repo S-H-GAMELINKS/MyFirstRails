@@ -18,3 +18,6 @@
 //= require ace/mode-ruby
 //= require turbolinks
 //= require_tree .
+
+var console = {};
+console.log = function(hogehoge){ $(".exec").append(`${hogehoge}<br>`)};
