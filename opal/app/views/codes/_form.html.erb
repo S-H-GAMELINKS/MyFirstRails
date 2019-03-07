@@ -18,7 +18,8 @@
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, id: 'ruby_code' %>
+    <div id="editor" class="inner"></div>
   </div>
 
   <div class="actions">
