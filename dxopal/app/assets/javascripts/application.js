@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require dxopal.min
 //= require jquery
 //= require ace-rails-ap
 //= require ace/theme-monokai

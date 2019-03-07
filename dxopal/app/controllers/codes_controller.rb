@@ -8,7 +8,7 @@ class CodesController < ApplicationController
   end
 
   def code
-    render json: @source.code
+    render json: @code.content
   end
 
   # GET /codes/1
