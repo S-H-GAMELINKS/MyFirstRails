@@ -61,3 +61,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [ActiveAdminでの管理画面作成！](./activeadmin/README.md)
 
 - [DXOpalでのオンライン実行環境作成！](./dxopal/README.md)
+
+- [OpalでRubyのオンライン実行環境作成！](./opal/README.md)
