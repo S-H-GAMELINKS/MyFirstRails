@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @code.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @code.content %>
+</p>
+
+<script type="text/ruby">
+  require 'native'
+  DXOpal.dump_error{ require_remote String($$.location.pathname) + "/code" }
+</script>
+
+<canvas id="dxopal-canvas"></canvas>
+<div id="dxopal-errors"></div>
+<input type='button' id='pause' value='Pause/Resume'>
+
+<%= link_to 'Edit', edit_code_path(@code) %> |
+<%= link_to 'Back', codes_path %>
