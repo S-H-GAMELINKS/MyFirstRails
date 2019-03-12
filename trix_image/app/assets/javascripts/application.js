@@ -15,11 +15,6 @@
 //= require trix
 //= require turbolinks
 //= require_tree .
-
-Trix.config.attachments.preview.caption = {
-    name: false,
-    size: false
-  };
   
    function uploadAttachment(attachment) {
 
