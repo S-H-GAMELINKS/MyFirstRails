@@ -71,3 +71,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [SweetAlertを使用する！](./sweetalert-rails/README.md)
 
 - [Trixに画像アップロード機能の追加！](./trix_image/README.md)
+
+- [AR.jsでのAR機能の埋め込み！](./arjs/README.md)
