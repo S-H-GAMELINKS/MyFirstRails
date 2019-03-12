@@ -67,3 +67,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [OpalでRubyのオンライン実行環境作成！](./opal/README.md)
 
 - [Materializeを使用する！](./materialize-sass/README.md)
+
+- [Trixに画像アップロード機能の追加！](./trix_image/README.md)
