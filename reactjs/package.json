@@ -6,6 +6,7 @@
     "babel-preset-react": "^6.24.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
+    "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.8.4"
   },
   "devDependencies": {
