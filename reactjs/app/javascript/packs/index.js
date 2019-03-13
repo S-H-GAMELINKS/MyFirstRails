@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 import Header from './components/layouts/Header'
 import Main from './components/web/Main'
@@ -19,4 +20,6 @@ class App extends React.Component {
     }
 }
 
-export default App;
+document.addEventListener("DOMContentLoaded", e => {
+    ReactDOM.render(<App />, document.body.appendChild(document.createElement('div')))
+})
