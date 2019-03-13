@@ -11,5 +11,9 @@
 
   <body>
     <%= yield %>
+
+    <% if Rails.env == 'development'%>
+      <%= console %>
+    <% end %>
   </body>
 </html>
