@@ -1,0 +1,2 @@
+web: bundle exec rails s
+elm: bundle exec ruby bin/webpack-dev-server
