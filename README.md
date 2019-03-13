@@ -77,3 +77,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [React.jsの導入サンプル！](./reactjs/README.md)
 
 - [web-consoleの導入！](./webconsole/README.md)
+
+- [prontoでの自動コードレビュー](./pronto/README.md)
