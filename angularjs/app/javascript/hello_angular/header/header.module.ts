@@ -13,4 +13,4 @@ import { HeaderComponent } from './header.component';
   providers: [],
   bootstrap: [HeaderComponent]
 })
-export class AppModule { }
+export class HeaderModule { }
