@@ -79,3 +79,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [web-consoleの導入！](./webconsole/README.md)
 
 - [prontoでの自動コードレビュー](./pronto/README.md)
+
+- [Elm導入！](./elm/README.md)
