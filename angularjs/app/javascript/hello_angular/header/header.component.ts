@@ -28,6 +28,6 @@ import { Component } from '@angular/core';
   </nav>
   `
 })
-export class AppComponent {
+export class HeaderComponent {
   name = 'Angular.js/Rails';
 }
