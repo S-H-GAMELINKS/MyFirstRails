@@ -81,3 +81,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [prontoでの自動コードレビュー](./pronto/README.md)
 
 - [Elm導入！](./elm/README.md)
+
+- [Angular.jsの導入！](./angularjs/README.md)
