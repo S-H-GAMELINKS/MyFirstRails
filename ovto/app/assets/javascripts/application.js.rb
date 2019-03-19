@@ -1,5 +1,5 @@
 require 'opal'
-require 'rails_ujs'
+require 'rails-ujs'
 require 'turbolinks'
 require_tree '.'
 
