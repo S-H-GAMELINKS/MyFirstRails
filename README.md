@@ -83,3 +83,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [Elm導入！](./elm/README.md)
 
 - [Angular.jsの導入！](./angularjs/README.md)
+
+- [PaperTrailでの差分管理サンプル！](./papertrail/README.md)
