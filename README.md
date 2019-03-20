@@ -87,3 +87,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [PaperTrailでの差分管理サンプル！](./papertrail/README.md)
 
 - [Ovtoでのフロントエンド開発！](./ovto/README.md)
+
+- [himlの導入！](./himl/README.md)
