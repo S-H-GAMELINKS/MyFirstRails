@@ -85,3 +85,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [Angular.jsの導入！](./angularjs/README.md)
 
 - [PaperTrailでの差分管理サンプル！](./papertrail/README.md)
+
+- [Ovtoでのフロントエンド開発！](./ovto/README.md)
