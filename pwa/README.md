@@ -34,6 +34,20 @@ gem 'sqlite3', '1.3.13'
 bundle install
 ```
 
+### ScaffoldでCRUDを作成
+
+`rails g scaffold` コマンドを使い、CRUDを作成します
+
+```shell
+rails g scaffold post title:string content:text
+```
+
+その後、`rails db:migrate`でマイグレーションを行います
+
+```shell
+rails db:migrate
+```
+
 ### PWA化
 
 まず、`serviceworker-rails`を`Gemfile`に追加します
