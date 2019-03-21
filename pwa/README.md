@@ -1,24 +1,56 @@
-# README
+# PWA
+## 概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Railsに初めて触れる方を対象にしたチュートリアルです
 
-Things you may want to cover:
+`PWA`というWebアプリをスマホやPCへインストールできるようにする機能をRailsに導入するチュートリアルです
 
-* Ruby version
+## チュートリアル
+### Railsのひな型を作る
 
-* System dependencies
+まず、`rails new`を実行し、Railsアプリのひな型を作成します
 
-* Configuration
+```shell
+rails new himl
+```
 
-* Database creation
+次に、作成したRailsアプリのディレクトリへと移動します
 
-* Database initialization
+```shell
+cd himl
+```
 
-* How to run the test suite
+### SQLite3のバージョン修正
 
-* Services (job queues, cache servers, search engines, etc.)
+先ほどの`rails new`で`sqlite3`のインストールがエラーになっている場合は、以下のようにバージョンを指定してください
 
-* Deployment instructions
+```ruby:Gemfile
+gem 'sqlite3', '1.3.13'
+```
 
-* ...
+その後、`bundle install`を実行します
+
+```shell
+bundle install
+```
+
+### PWA化
+
+まず、`serviceworker-rails`を`Gemfile`に追加します
+
+```ruby:Gemfile
+gem 'serviceworker-rails'
+```
+
+その後、`bundle install`を実行します
+
+```shell
+bundle install
+```
+
+最後に、以下のコマンドを実行すればPWA化は完了です！
+
+```shell
+rails g serviceworker:install
+```
+
