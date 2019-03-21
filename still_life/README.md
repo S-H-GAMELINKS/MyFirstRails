@@ -1,24 +1,81 @@
-# README
+# still_lifeの導入
+## 概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Railsに初めて触れる方を対象にしたチュートリアルです
 
-Things you may want to cover:
+[`still_life`](https://github.com/amatsuda/still_life)というsystemテスト実行時に表示されたHTMLをログとして保存できる`gem`を導入するチュートリアルです
 
-* Ruby version
+## チュートリアル
+### Railsのひな型を作る
 
-* System dependencies
+まず、`rails new`を実行し、Railsアプリのひな型を作成します
 
-* Configuration
+```shell
+rails new still_life
+```
 
-* Database creation
+次に、作成したRailsアプリのディレクトリへと移動します
 
-* Database initialization
+```shell
+cd still_life
+```
 
-* How to run the test suite
+### SQLite3のバージョン修正
 
-* Services (job queues, cache servers, search engines, etc.)
+先ほどの`rails new`で`sqlite3`のインストールがエラーになっている場合は、以下のようにバージョンを指定してください
 
-* Deployment instructions
+```ruby:Gemfile
+gem 'sqlite3', '1.3.13'
+```
 
-* ...
+その後、`bundle install`を実行します
+
+```shell
+bundle install
+```
+
+### ScaffoldでCRUDを作成
+
+`rails g scaffold` コマンドを使い、CRUDを作成します
+
+```shell
+rails g scaffold post title:string content:text
+```
+
+その後、`rails db:migrate`でマイグレーションを行います
+
+```shell
+rails db:migrate
+```
+
+### still_lifeの導入
+
+それでは`still_life`を導入したいと思います！
+
+まず、`Gemfile`に`gem 'still_life'`を追加します
+
+```ruby:Gemfile
+gem 'still_life'
+```
+
+次に、`chromedriver-helper`のバージョンを指定します
+
+```ruby:Gemfile
+gem 'chromedriver-helper', '1.2.0'
+```
+
+その後、`bundle install`を実行します
+
+```shell
+bundle intall
+```
+
+あとは、以下のコマンドを実行します
+
+```shell
+rails test:system test STILL_LIFE=rails52
+```
+
+`tmp/rails52/test`ディレクトリ以下にテスト時のHTMLがログとして保存されています
+
+また、コードの変更も差分として残してくれるのでテスト時の画面を確認するのに重宝します！
