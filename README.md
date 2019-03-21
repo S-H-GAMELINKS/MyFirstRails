@@ -93,3 +93,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [still_lifeの導入！](./still_life/README.md)
 
 - [PWA化チュートリアル！](./pwa/README.md)
+
+- [Gonの導入！](./gon_sample/README.md)
