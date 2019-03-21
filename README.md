@@ -89,3 +89,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [Ovtoでのフロントエンド開発！](./ovto/README.md)
 
 - [himlの導入！](./himl/README.md)
+
+- [still_lifeの導入！](./still_life/README.md)
