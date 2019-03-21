@@ -91,3 +91,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [himlの導入！](./himl/README.md)
 
 - [still_lifeの導入！](./still_life/README.md)
+
+- [PWA化チュートリアル！](./pwa/README.md)
