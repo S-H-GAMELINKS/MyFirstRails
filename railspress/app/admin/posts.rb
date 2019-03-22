@@ -1,5 +1,10 @@
 ActiveAdmin.register Post do
     permit_params :title, :content, :auther, :date
+
+    show do
+        render partial: 'posts/show'
+    end
+
     form do |f|
         f.inputs 'Article' do
           f.input :title
