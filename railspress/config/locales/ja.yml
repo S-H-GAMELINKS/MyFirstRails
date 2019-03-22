@@ -1,0 +1,4 @@
+ja:
+  time:
+    formats:
+      long: "%d/%m/%Y %H:%M"
