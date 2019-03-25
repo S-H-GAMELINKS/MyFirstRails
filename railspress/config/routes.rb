@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'posts/index'
+  root 'posts#index'
   get 'posts/show'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
