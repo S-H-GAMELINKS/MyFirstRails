@@ -2,7 +2,7 @@ ActiveAdmin.register Post do
     permit_params :title, :content, :auther, :date
 
     show do
-        render partial: 'posts/show'
+        render partial: 'resources/show'
     end
 
     form do |f|
