@@ -1,0 +1,11 @@
+<div class="row">
+<% @posts.each do |post| %>
+    <div class="card col-lg-4" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"><%= post.title %></h5>
+            <p class="card-text"><%= %></p>
+            <%= link_to "Show Post", post_path(post), :class => "btn btn-primary" %>
+        </div>
+    </div>
+<% end %>
+</div>

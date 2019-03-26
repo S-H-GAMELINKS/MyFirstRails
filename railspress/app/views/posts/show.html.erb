@@ -1,0 +1,14 @@
+<h1><%= @post.title %></h1>
+
+<p><%= sanitize @post.content %><p>
+
+<h1>Auther</h1>
+
+<%= @post.auther %>
+
+<h2>Comments</h2>
+  <div id="comments">
+    <%= render @post.comments %>
+  </div>
+
+<%= render 'comments/new', post: @post %> 
