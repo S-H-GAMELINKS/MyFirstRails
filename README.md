@@ -95,3 +95,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [PWA化チュートリアル！](./pwa/README.md)
 
 - [Gonの導入！](./gon_sample/README.md)
+
+- [ActiveAdminでのブログアプリ](./railspress/README.md)
