@@ -9,3 +9,6 @@ require("@rails/activestorage").start()
 require("channels")
 
 import "controllers"
+
+require("trix")
+require("@rails/actiontext")
