@@ -16,7 +16,7 @@ Railsに初めて触れる方を対象にしたチュートリアルです
 `gem install rails -v '6.0.0beta3'`を実行します
 
 ```shell
-gem install rails -v '6.0.0beta3'
+gem install rails -v '6.0.0beta3' --webpack=stimulus
 ```
 
 インストールできていればOKです
@@ -26,7 +26,7 @@ gem install rails -v '6.0.0beta3'
 まずは`rails new`を実行し、`Rails`アプリのひな型を作成します
 
 ```shell
-rails _6.0.0beta3_ new action_text
+rails _6.0.0beta3_ new action_text --webpack=
 ```
 
 その後、`action_text`へと移動します
