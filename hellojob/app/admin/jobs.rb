@@ -1,6 +1,14 @@
 ActiveAdmin.register Job do
     permit_params :title, :content
 
+    index do
+        column :id
+        column :title
+
+        actions defaults: true do |job|
+        end
+    end
+
     show do
         attributes_table do
             row :title
