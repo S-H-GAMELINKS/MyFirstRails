@@ -5,4 +5,10 @@ class JobsController < ApplicationController
 
   def show
   end
+
+  private
+
+    def set_job
+      @job = Job.find(params[:id])
+    end
 end
