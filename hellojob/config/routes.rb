@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'jobs#index'
   resources :jobs, :only => [:index, :show]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
