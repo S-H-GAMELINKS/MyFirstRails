@@ -1,3 +1,11 @@
-<% @jobs.each do |job| %>
-    <%= link_to "#{job.title}", job_path(job) %>
-<% end %>
+<div class="row">
+    <% @jobs.each do |job| %>
+        <div class="card col-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"><%= job.title %></h5>
+                <p class="card-text"><%= sanitize job.content %></p>
+                <%= link_to "詳細", job_path(job), class: "btn btn-primary" %>
+            </div>
+        </div>
+    <% end %>
+</div>
