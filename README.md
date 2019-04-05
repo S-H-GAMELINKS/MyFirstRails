@@ -99,3 +99,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [ActiveAdminでのブログアプリ](./railspress/README.md)
 
 - [ActionTextの導入！](./action_text/README.md)
+
+- [求人サイトの作成！](./hellojob/README.md)
