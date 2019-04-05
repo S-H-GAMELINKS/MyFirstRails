@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   before_action :set_job, :only => [:show]
 
-  PAGE_PER = 10
+  PAGE_PER = 12
 
   def index
     @jobs = Job.all.page(params[:page]).per(PAGE_PER)
