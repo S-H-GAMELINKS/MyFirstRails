@@ -60,7 +60,7 @@ export default class extends Controller {
         console.log(response);
         this.placesTarget.innerHTML = "";
         for(var i = 0; i < response.data.rest.length; i++){
-            this.placesTarget.innerHTML += `<a href="${response.data.rest[i].url}">${response.data.rest[i]}</a>`;
+            this.placesTarget.innerHTML += `<a href="${response.data.rest[i].url}">${response.data.rest[i].name}</a>`;
         }
     }, (error) => {
         console.log(error);
