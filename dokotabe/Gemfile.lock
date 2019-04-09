@@ -84,6 +84,10 @@ GEM
       thor (>= 0.13.6)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gon (6.2.1)
+      actionpack (>= 3.0)
+      multi_json
+      request_store (>= 1.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -143,6 +147,8 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     regexp_parser (1.4.0)
+    request_store (1.4.1)
+      rack (>= 1.4)
     rubyzip (1.2.2)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -204,6 +210,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   duktape
   foreman
+  gon
   jbuilder (~> 2.5)
   puma (~> 3.11)
   rails (~> 5.2.3)
