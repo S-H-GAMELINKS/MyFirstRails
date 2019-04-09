@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^4.0.2",
+    "axios": "^0.18.0",
     "stimulus": "^1.1.1"
   },
   "devDependencies": {
