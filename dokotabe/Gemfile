@@ -43,6 +43,10 @@ gem 'gon'
 # Using Dotenv-rails
 gem 'dotenv-rails', '2.5.0'
 
+# Using Bootstrap
+gem 'jquery-rails'
+gem 'bootstrap'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
