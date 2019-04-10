@@ -66,7 +66,7 @@ export default class extends Controller {
                                                 <h5 class="card-title">${response.data.rest[i].name}</h5>
                                                 <p class="card-text">住所：${response.data.rest[i].address}</p>
                                                 <p class="card-text">TEL：${response.data.rest[i].tel}</p>
-                                                <a href="${response.data.rest[i].url}" class="btn btn-primary">ボタン</a>
+                                                <a href="${response.data.rest[i].url}" class="btn btn-primary">お店の詳細を見る</a>
                                               </div>
                                             </div>
                                             `;
