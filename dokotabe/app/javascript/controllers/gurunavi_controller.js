@@ -60,7 +60,16 @@ export default class extends Controller {
         console.log(response);
         this.placesTarget.innerHTML = "";
         for(var i = 0; i < response.data.rest.length; i++){
-            this.placesTarget.innerHTML += `<a href="${response.data.rest[i].url}">${response.data.rest[i].name}</a>`;
+            this.placesTarget.innerHTML += `
+                                            <div class="card" style="width: 18rem;">
+                                              <div class="card-body">
+                                                <h5 class="card-title">${response.data.rest[i].name}</h5>
+                                                <p class="card-text">住所：${response.data.rest[i].address}</p>
+                                                <p class="card-text">TEL：${response.data.rest[i].tel}</p>
+                                                <a href="${response.data.rest[i].url}" class="btn btn-primary">ボタン</a>
+                                              </div>
+                                            </div>
+                                            `;
         }
     }, (error) => {
         console.log(error);
