@@ -101,3 +101,5 @@ Rails初心者のためのチュートリアル集です。各項目からブロ
 - [ActionTextの導入！](./action_text/README.md)
 
 - [求人サイトの作成！](./hellojob/README.md)
+
+- [ぐるなびAPIでの周辺のお店検索！](./dokotabe/README.md)
